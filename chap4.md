@@ -110,7 +110,7 @@ $$|z| \le \sqrt{2} \, \max(|c|, |d|).$$
 
 *Sketch of proof.* The standard proof of the evaluation contraction uses the triangle inequality for $d_\gamma$. The modulus inequality introduces a factor of $\sqrt{2}$ when comparing $d_\gamma$ to the sup-norm of the pair $(c, d)$. Chasing constants gives $\gamma \sqrt{2} < 1$, i.e. $\gamma < 1/\sqrt{2}$. $\square$
 
-**Remark 4.5.3 (The threshold is not sharp).** The constant $1/\sqrt{2}$ is an artifact of the $\ell^2$-$\ell^\infty$ equivalence in $\mathbb{R}^2$. It is sufficient, not necessary. A sharper argument using the phase structure of the complex values may extend the contraction to all $\gamma \in [0, 1]$. This is one of the open problems of the framework (OP1 in Part V).
+**Remark 4.5.3 (The threshold is not sharp).** The constant $1/\sqrt{2}$ is an artifact of the $\ell^2$ - $\ell^\infty$ equivalence in $\mathbb{R}^2$. It is sufficient, not necessary. A sharper argument using the phase structure of the complex values may extend the contraction to all $\gamma \in [0, 1]$. This is one of the open problems of the framework (OP1 in Part V).
 
 **Remark 4.5.4 (Distinction from the metric property).** The metric property of $d_\gamma$ (Proposition 2.4.3) holds for *all* $\gamma \in [0, 1]$. The contraction of the Bellman operator in $d_\gamma$-modulus holds only for $\gamma < 1/\sqrt{2}$ under the naive proof. These are different results about different objects and should not be conflated. The metric property is about the geometry of state space; the contraction property is about the convergence of a specific operator.
 
