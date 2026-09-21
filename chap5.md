@@ -77,6 +77,7 @@ $$\{B^-_\gamma(b, r) : b \in \mathcal{B}, r > 0\}.$$
 ## 5.4 Join, meet, and average topologies
 
 **Definition 5.4.1 (Join topology).** The *join topology* $\tau_+ \vee \tau_-$ is the coarsest topology containing both $\tau_+$ and $\tau_-$. A basis is given by
+
 $$\{B^+_\gamma(b, r) \cap B^-_\gamma(b, s) : b \in \mathcal{B}, r, s > 0\}.$$
 
 **Definition 5.4.2 (Meet topology).** The *meet topology* $\tau_+ \wedge \tau_-$ is the finest topology contained in both $\tau_+$ and $\tau_-$. A basis is given by the unions of sets that are open in both topologies.
