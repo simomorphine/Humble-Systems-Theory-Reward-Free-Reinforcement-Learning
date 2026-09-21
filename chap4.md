@@ -4,8 +4,11 @@
 
 ## 4.1 Definition and basic properties
 
-**Definition 4.1.1 ($\gamma$-distance).** For $\gamma \in [0, 1]$, the *$\gamma$-distance* on $\mathcal{B}$ is
-$$d_\gamma(b, b') = \sqrt{c(b, b')^2 + \gamma^2 \, d(b, b')^2}.$$
+**Definition 4.1.1 ($\gamma$-distance).** For $\gamma \in [0, 1]$, the $\gamma$-*distance* on $\mathcal{B}$ is
+
+$$
+d_\gamma(b, b') = \sqrt{c(b, b')^2 + \gamma^2 \, d(b, b')^2}.
+$$
 
 **Proposition 4.1.2 (Basic properties).** For every $\gamma \in [0, 1]$:
 
