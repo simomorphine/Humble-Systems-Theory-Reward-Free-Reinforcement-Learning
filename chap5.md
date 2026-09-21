@@ -102,9 +102,25 @@ $$d_{\text{avg}}(b, b'') = \frac{1}{2}(d_\gamma(b, b'') + d_\gamma(b'', b)) \le 
 **Proposition 5.4.6 (Topological chain).**
 $$\tau_+ \wedge \tau_- \subseteq \tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-.$$
 
-*Proof.* **Join inclusion.** A $d_{\text{avg}}$-ball $B_{\text{avg}}(b, r)$ contains the set $B^+_\gamma(b, r/2) \cap B^-_\gamma(b, r/2)$: if $b'$ is in the intersection, then $d_\gamma(b, b') < r/2$ and $d_\gamma(b', b) < r/2$, so $d_{\text{avg}}(b, b') < r/2 < r$. Hence every $d_{\text{avg}}$-ball is a union of sets open in the join topology, and $\tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-$.
+*Proof.* **Join inclusion.** A $d_{\text{avg}}$-ball $B_{\text{avg}}(b, r)$ contains the set 
 
-**Meet inclusion.** Suppose $U$ is open in both $\tau_+$ and $\tau_-$. For each $b \in U$, there exist $r_+, r_- > 0$ such that $B^+_\gamma(b, r_+) \subseteq U$ and $B^-_\gamma(b, r_-) \subseteq U$. Let $r = \min(r_+, r_-)$. If $b' \in B_{\text{avg}}(b, r/2)$, then $d_{\text{avg}}(b, b') < r/2$, so $d_\gamma(b, b') < r$ and $d_\gamma(b', b) < r$. Hence $b' \in B^+_\gamma(b, r) \cap B^-_\gamma(b, r) \subseteq U$, so $B_{\text{avg}}(b, r/2) \subseteq U$. Thus $U$ is open in $\tau_{\text{avg}}$, and $\tau_+ \wedge \tau_- \subseteq \tau_{\text{avg}}$. $\square$
+$$B^+_\gamma(b, r/2) \cap B^-_\gamma(b, r/2)$$ 
+
+if $b'$ is in the intersection, then $d_\gamma(b, b') < r/2$ and $d_\gamma(b', b) < r/2$, so $d_{\text{avg}}(b, b') < r/2 < r$. Hence every $d_{\text{avg}}$-ball is a union of sets open in the join topology, and $\tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-$.
+
+**Meet inclusion.** Suppose $U$ is open in both $\tau_+$ and $\tau_-$. For each $b \in U$, there exist $r_+, r_- > 0$ such that 
+
+$$B^+_\gamma(b, r_+) \subseteq U$$
+
+and 
+
+$$B^-_\gamma(b, r_-) \subseteq U$$
+
+Let $r = \min(r_+, r_-)$. If $b' \in B_{\text{avg}}(b, r/2)$, then $d_{\text{avg}}(b, b') < r/2$, so $d_\gamma(b, b') < r$ and $d_\gamma(b', b) < r$. Hence 
+
+$$b' \in B^+_\gamma(b, r) \cap B^-_\gamma(b, r) \subseteq U$$
+
+so $B_{\text{avg}}(b, r/2) \subseteq U$. Thus $U$ is open in $\tau_{\text{avg}}$, and $\tau_+ \wedge \tau_- \subseteq \tau_{\text{avg}}$. $\square$
 
 **Corollary 5.4.7 (Chain restated).**
 $$\tau_+ \wedge \tau_- \subseteq \tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-, \qquad \tau_+ \subseteq \tau_+ \vee \tau_-, \qquad \tau_- \subseteq \tau_+ \vee \tau_-.$$
@@ -161,17 +177,17 @@ $$\alpha_\gamma(b) = \limsup_{b' \to_{\tau_{\text{avg}}} b} \frac{|d_\gamma(b, b
 
 *Proof.* For any $b \neq b'$, $|d_\gamma(b, b') - d_\gamma(b', b)| \le d_\gamma(b, b') + d_\gamma(b', b) = 2 d_{\text{avg}}(b, b')$. The ratio is therefore at most $2$. The lower bound is trivial. $\square$
 
-**Definition 5.6.3 (Locally symmetric point).** $b$ is *locally symmetric* if $\alpha_\gamma(b) = 0$. The set of locally symmetric points is denoted $\operatorname{Sym}_\gamma(\mathcal{B})$.
+**Definition 5.6.3 (Locally symmetric point).** $b$ is *locally symmetric* if $\alpha_\gamma(b) = 0$. The set of locally symmetric points is denoted $\mathrm{Sym}_\gamma(\mathcal{B})$.
 
-**Proposition 5.6.4 (Symmetry points are closed).** $\operatorname{Sym}_\gamma(\mathcal{B})$ is closed in $\tau_{\text{avg}}$.
+**Proposition 5.6.4 (Symmetry points are closed).** $\mathrm{Sym}_\gamma(\mathcal{B})$ is closed in $\tau_{\text{avg}}$.
 
 *Proof.* The map $(b, b') \mapsto |d_\gamma(b, b') - d_\gamma(b', b)| / d_{\text{avg}}(b, b')$ is continuous on $\{(b, b') : b \neq b'\}$ with respect to the product topology on $\mathcal{B} \times \mathcal{B}$ minus the diagonal. The set where the $\limsup$ vanishes is closed. $\square$
 
-**Proposition 5.6.5 (Global symmetry implies local symmetry).** If $d_\gamma$ is symmetric on all of $\mathcal{B}$, then $\operatorname{Sym}_\gamma(\mathcal{B}) = \mathcal{B}$.
+**Proposition 5.6.5 (Global symmetry implies local symmetry).** If $d_\gamma$ is symmetric on all of $\mathcal{B}$, then $\mathrm{Sym}_\gamma(\mathcal{B}) = \mathcal{B}$.
 
 *Proof.* If $d_\gamma(b, b') = d_\gamma(b', b)$ for all $b, b'$, the numerator vanishes identically. $\square$
 
-**Remark 5.6.6 (The converse is false).** A point can be locally symmetric without the metric being globally symmetric. The set $\operatorname{Sym}_\gamma(\mathcal{B})$ is the locus where the metric is *approaching* symmetry in the limit, which is a weaker condition than global symmetry. This distinction will matter in the equilibrium theory of Part IV.
+**Remark 5.6.6 (The converse is false).** A point can be locally symmetric without the metric being globally symmetric. The set $\mathrm{Sym}_\gamma(\mathcal{B})$ is the locus where the metric is *approaching* symmetry in the limit, which is a weaker condition than global symmetry. This distinction will matter in the equilibrium theory of Part IV.
 
 ## 5.7 Fixed points in the bitopological structure
 
