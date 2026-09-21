@@ -71,7 +71,8 @@ $$|\mathbb{E}[Z]| \le \mathbb{E}[|Z|].$$
 
 ## 2.4 The $\gamma$-distance family
 
-**Definition 2.4.1 ($\gamma$-distance).** For $\gamma \in [0, 1]$, the *$\gamma$-distance* is
+**Definition 2.4.1 ($\gamma$-distance).** For $\gamma \in [0, 1]$, the $\gamma$-*distance* is
+
 $$d_\gamma(b, b') = \sqrt{c(b, b')^2 + \gamma^2 \, d(b, b')^2}.$$
 
 **Proposition 2.4.2 (Basic properties).** For every $\gamma \in [0, 1]$:
@@ -92,8 +93,11 @@ $$c(b, b'') \le c(b, b') + c(b', b''),$$
 $$|d(b, b'')| \le |d(b, b')| + |d(b', b'')|.$$
 
 Apply Minkowski's inequality to the vectors
+
 $$u = (c(b, b'), \gamma\, d(b, b')), \qquad v = (c(b', b''), \gamma\, d(b', b'')).$$
+
 Minkowski's inequality gives $\|u + v\|_2 \le \|u\|_2 + \|v\|_2$. The first component of $u + v$ is $c(b, b') + c(b', b'') \ge c(b, b'')$, and the second component is $\gamma(d(b, b') + d(b', b''))$, whose absolute value dominates $\gamma |d(b, b'')|$. Hence
+
 $$\|(c(b, b''), \gamma\, d(b, b''))\|_2 \le \|u + v\|_2 \le \|u\|_2 + \|v\|_2 = d_\gamma(b, b') + d_\gamma(b', b''). \qquad \square$$
 
 **Corollary 2.4.4 (Endpoints).** $d_0(b, b') = c(b, b')$ (pure cost) and $d_1(b, b') = |Q(b, b')|$ (full modulus).
