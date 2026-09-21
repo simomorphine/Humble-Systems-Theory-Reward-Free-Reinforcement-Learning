@@ -127,19 +127,23 @@ where $z(b, a, b') = c(b, a, b') + i\, d(b, a, b')$ and $\mathcal{Q} = \mathcal{
 **Theorem 3.5.2 (Evaluation contraction).** $T^\pi$ is a $\lambda$-contraction on $(\mathcal{Q}, \|\cdot\|_\infty)$.
 
 *Proof.* For $Q_1, Q_2 \in \mathcal{Q}$ and any $(b, a)$:
+
 $$|(T^\pi Q_1)(b, a) - (T^\pi Q_2)(b, a)| = \lambda \left|\mathbb{E}_{b'}[Q_1(b', \pi(b')) - Q_2(b', \pi(b'))]\right| \le \lambda \, \mathbb{E}_{b'}[|Q_1(b', \pi(b')) - Q_2(b', \pi(b'))|] \le \lambda \, \|Q_1 - Q_2\|_\infty.$$
+
 The first inequality uses Proposition 2.3.2 (modulus of expectation); the second uses the definition of the sup-norm. Taking the supremum over $(b, a)$ gives the contraction. $\square$
 
 **Corollary 3.5.3 (Existence and uniqueness of $Q^\pi$).** For any deterministic policy $\pi$, there exists a unique $Q^\pi \in \mathcal{Q}$ satisfying $T^\pi Q^\pi = Q^\pi$. Moreover, $Q^\pi = \lim_{n \to \infty} (T^\pi)^n Q_0$ for any $Q_0 \in \mathcal{Q}$.
 
 *Proof.* Banach fixed-point theorem applied to $T^\pi$ on the complete space $(\mathcal{Q}, \|\cdot\|_\infty)$. $\square$
 
-**Corollary 3.5.4 (Bound on the fixed point).** $\|Q^\pi\|_\infty \le Z_{\max}/(1-\lambda)$, where $Z_{\max} = \sup_{b, a, b'} |z(b, a, b')|$.
+**Corollary 3.5.4 (Bound on the fixed point).** $\mid Q^\pi \mid_\infty \le Z_{\max}/(1-\lambda)$, where $Z_{\max} = \sup_{b, a, b'} |z(b, a, b')|$.
 
 *Proof.* $|Q^\pi(b, a)| = |T^\pi Q^\pi(b, a)| \le Z_{\max} + \lambda \|Q^\pi\|_\infty$. Rearranging gives the bound. $\square$
 
 **Corollary 3.5.5 (Component equations).** The real and imaginary parts of $Q^\pi$ satisfy separate Bellman equations:
+
 $$Q_R^\pi(b, a) = \mathbb{E}_{b'}[c(b, a, b') + \lambda Q_R^\pi(b', \pi(b'))],$$
+
 $$Q_I^\pi(b, a) = \mathbb{E}_{b'}[d(b, a, b') + \lambda Q_I^\pi(b', \pi(b'))].$$
 
 *Proof.* Taking real and imaginary parts of the complex Bellman equation. $\square$
