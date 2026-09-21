@@ -49,8 +49,10 @@ $$\mathbb{E}^\pi[\phi(B_{t+1}) \mid B_t = b, A_t = a] \ge \phi(b).$$
 
 **Proposition 3.2.2 (Non-negativity of $Q_I^\pi$).** Under the submartingale condition, $Q_I^\pi(b, a) \ge 0$ for all $(b, a)$.
 
-*Proof.* By the submartingale condition, the process $\{\phi(B_{t+k})\}_{k \ge 0}$ is a submartingale along any trajectory under $\pi$. Iterating the submartingale inequality,
+*Proof.* By the submartingale condition, the process $\lbrace \phi(B_{t+k})\rbrace_{k \ge 0}$ is a submartingale along any trajectory under $\pi$. Iterating the submartingale inequality,
+
 $$\mathbb{E}^\pi[\phi(B_{t+k}) \mid B_t = b, A_t = a] \ge \phi(b)$$
+
 for all $k \ge 0$. Therefore
 $$\bar{\phi}^\pi(b, a) = (1-\lambda) \sum_{k=0}^\infty \lambda^k \mathbb{E}^\pi[\phi(B_{t+k+1}) \mid B_t = b, A_t = a] \ge (1-\lambda) \sum_{k=0}^\infty \lambda^k \phi(b) = \phi(b).$$
 Subtracting $\phi(b)$ gives $Q_I^\pi(b, a) \ge 0$. $\square$
