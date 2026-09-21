@@ -14,14 +14,6 @@ of the form
 $$Q(b, b') = c(b, b') + i\, d(b, b'),$$
 where $c : \mathcal{B} \times \mathcal{B} \to \mathbb{R}_{\ge 0}$ is a *real cost* and $d : \mathcal{B} \times \mathcal{B} \to \mathbb{R}$ is a *real debt*.
 
-**Definition 2.1.4 (Complex quasi-metric).** A complex cost function $Q$ is a *complex quasi-metric* if:
-
-- (Q1) *Identity:* $Q(b, b) = 0$ for all $b \in \mathcal{B}$.
-- (Q2) *Non-negative real part:* $\mathrm{Re} Q(b, b') = c(b, b') \ge 0$ for all $b, b'$.
-- (Q3) *Generalized triangle inequality:*
-$$|Q(b, b'')| \le |Q(b, b')| + |Q(b', b'')|$$
-for all $b, b', b'' \in \mathcal{B}$.
-
 **Remark 2.1.5 (Asymmetry is permitted).** Symmetry is not required. In general $Q(b, b') \neq Q(b', b)$, and both the modulus and the argument may differ. The asymmetry is the central structural feature of the framework (Chapter 5).
 
 **Remark 2.1.6 (The triangle inequality is for the modulus).** Condition (Q3) is the triangle inequality for the modulus $|Q|$. It is weaker than the triangle inequality for the complex-valued function $Q$ itself, which would require $Q(b, b'') = Q(b, b') + Q(b', b'')$ and is not generally true. Throughout the book, "triangle inequality" refers to (Q3) unless stated otherwise.
