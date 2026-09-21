@@ -17,7 +17,7 @@ where $c : \mathcal{B} \times \mathcal{B} \to \mathbb{R}_{\ge 0}$ is a *real cos
 **Definition 2.1.4 (Complex quasi-metric).** A complex cost function $Q$ is a *complex quasi-metric* if:
 
 - (Q1) *Identity:* $Q(b, b) = 0$ for all $b \in \mathcal{B}$.
-- (Q2) *Non-negative real part:* $\operatorname{Re} Q(b, b') = c(b, b') \ge 0$ for all $b, b'$.
+- (Q2) *Non-negative real part:* $\mathrm{Re} Q(b, b') = c(b, b') \ge 0$ for all $b, b'$.
 - (Q3) *Generalized triangle inequality:*
 $$|Q(b, b'')| \le |Q(b, b')| + |Q(b', b'')|$$
 for all $b, b', b'' \in \mathcal{B}$.
