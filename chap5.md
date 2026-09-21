@@ -40,7 +40,11 @@ $$B^+_\gamma(b, r) = B^-_\gamma(b, r)$$
 
 if and only if $d_\gamma$ is symmetric.
 
-*Proof.* ($\Leftarrow$) Immediate. ($\Rightarrow$) Suppose $B^+_\gamma(b, r) = B^-_\gamma(b, r)$ for all $b, r$. Then for any $b' \in \mathcal{B}$, $b' \in B^+_\gamma(b, r)$ iff $b' \in B^-_\gamma(b, r)$, i.e. $d_\gamma(b, b') < r$ iff $d_\gamma(b', b) < r$ for all $r > 0$. This implies $d_\gamma(b, b') = d_\gamma(b', b)$ for all $b, b'$. $\square$
+*Proof.* ($\Leftarrow$) Immediate. ($\Rightarrow$) Suppose 
+
+$$B^+_\gamma(b, r) = B^-_\gamma(b, r)$$ 
+
+for all $b, r$. Then for any $b' \in \mathcal{B}$, $b' \in B^+_\gamma(b, r)$ iff $b' \in B^-_\gamma(b, r)$, i.e. $d_\gamma(b, b') < r$ iff $d_\gamma(b', b) < r$ for all $r > 0$. This implies $d_\gamma(b, b') = d_\gamma(b', b)$ for all $b, b'$. $\square$
 
 **Remark 5.2.3 (Asymmetry of the modulus vs. asymmetry of the argument).** The asymmetry of $Q$ implies asymmetry of $d_\gamma$ unless the asymmetry is confined to the argument: $Q(b, b') = e^{i\alpha} Q(b', b)$ for some phase $\alpha$. In that case $|Q(b, b')| = |Q(b', b)|$ and $d_1$ is symmetric even though $Q$ is not. The framework's asymmetry is primarily about the modulus; unless stated otherwise, "asymmetric" means $d_\gamma$ asymmetric for $\gamma > 0$.
 
