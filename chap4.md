@@ -55,9 +55,9 @@ Take square roots. (ii) The left inequality is $c \le \sqrt{c^2 + \gamma_2^2 d^2
 
 ## 4.3 Geometric interpretation
 
-**Definition 4.3.1 ($\gamma$-ball).** The *$\gamma$-ball of radius $r$ centered at $b$* is
+**Definition 4.3.1 ($\gamma$-ball).** The $\gamma$-*ball of radius* $r$ *centered at* $b$ is
 
-$$B_\gamma(b, r) = \{b' \in \mathcal{B} : d_\gamma(b, b') < r\}.$$
+$$B_\gamma(b, r) = \lbrace b' \in \mathcal{B} : d_\gamma(b, b') < r\rbrace.$$
 
 **Proposition 4.3.2 (Level sets).** For fixed $b$ and $r > 0$, the $\gamma$-ball is the set of $b'$ satisfying
 
@@ -73,7 +73,7 @@ In the $(c, d)$-plane, this is the interior of an ellipse with semi-axes $r$ (in
 
 - The ball expands in the $d$ direction by a factor of $1/\gamma$.
 - The ball is unchanged in the $c$ direction.
-- States with small cost but large debt, excluded from small-$\gamma$ balls, may be included in large-$\gamma$ balls.
+- States with small cost but large debt, excluded from small $\gamma$ balls, may be included in large $\gamma$ balls.
 
 This is the geometric picture: $\gamma$ is an anisotropy parameter of the quasi-metric, weighting the debt axis relative to the cost axis.
 
