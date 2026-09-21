@@ -12,9 +12,9 @@ $$\Delta Q(b, b') = Q(b, b') - Q(b', b) \in \mathbb{C}.$$
 - (i) $\Delta Q(b, b) = 0$.
 - (ii) $\Delta Q(b, b') = -\Delta Q(b', b)$.
 - (iii) If $d$ takes the potential-difference form, then
-$$\operatorname{Im} \Delta Q(b, b') = 2(\phi(b') - \phi(b)).$$
+$$\mathrm{Im} \Delta Q(b, b') = 2(\phi(b') - \phi(b)).$$
 
-*Proof.* (i) and (ii) are immediate from the definition. For (iii): $\operatorname{Im} \Delta Q = d(b, b') - d(b', b) = [\phi(b') - \phi(b)] - [\phi(b) - \phi(b')] = 2(\phi(b') - \phi(b))$. $\square$
+*Proof.* (i) and (ii) are immediate from the definition. For (iii): $\mathrm{Im} \Delta Q = d(b, b') - d(b', b) = [\phi(b') - \phi(b)] - [\phi(b) - \phi(b')] = 2(\phi(b') - \phi(b))$. $\square$
 
 **Remark 5.1.3 (Decomposition of the asymmetry).** The complex asymmetry decomposes into a real part and an imaginary part:
 $$\Delta Q(b, b') = \Delta c(b, b') + 2i(\phi(b') - \phi(b)),$$
@@ -26,10 +26,19 @@ where $\Delta c(b, b') = c(b, b') - c(b', b)$ measures the energetic irreversibi
 
 **Definition 5.2.1 (Forward and backward balls).** For $b \in \mathcal{B}$, $r > 0$, and $\gamma \in (0, 1]$:
 
-- The *forward ball* is $B^+_\gamma(b, r) = \{b' \in \mathcal{B} : d_\gamma(b, b') < r\}$.
-- The *backward ball* is $B^-_\gamma(b, r) = \{b' \in \mathcal{B} : d_\gamma(b', b) < r\}$.
+- The *forward ball* is:
 
-**Proposition 5.2.2 (Forward and backward balls coincide iff symmetric).** For all $b, r$, $B^+_\gamma(b, r) = B^-_\gamma(b, r)$ if and only if $d_\gamma$ is symmetric.
+$$B^+_\gamma(b, r) = \lbrace b' \in \mathcal{B} : d_\gamma(b, b') < r \rbrace$$
+
+- The *backward ball* is:
+
+$$B^-_\gamma(b, r) = \lbrace b' \in \mathcal{B} : d_\gamma(b', b) < r \rbrace$$
+
+**Proposition 5.2.2 (Forward and backward balls coincide iff symmetric).** For all $b, r$, 
+
+$$B^+_\gamma(b, r) = B^-_\gamma(b, r)$$
+
+if and only if $d_\gamma$ is symmetric.
 
 *Proof.* ($\Leftarrow$) Immediate. ($\Rightarrow$) Suppose $B^+_\gamma(b, r) = B^-_\gamma(b, r)$ for all $b, r$. Then for any $b' \in \mathcal{B}$, $b' \in B^+_\gamma(b, r)$ iff $b' \in B^-_\gamma(b, r)$, i.e. $d_\gamma(b, b') < r$ iff $d_\gamma(b', b) < r$ for all $r > 0$. This implies $d_\gamma(b, b') = d_\gamma(b', b)$ for all $b, b'$. $\square$
 
