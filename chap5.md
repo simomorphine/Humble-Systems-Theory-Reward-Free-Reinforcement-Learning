@@ -72,7 +72,7 @@ $$\{B^-_\gamma(b, r) : b \in \mathcal{B}, r > 0\}.$$
 
 *Proof.* By Corollary 4.2.2, the quasi-metrics $d_{\gamma_1}$ and $d_{\gamma_2}$ are topologically equivalent. Hence they generate the same forward and backward topologies. $\square$
 
-**Remark 5.3.6 (The $\gamma = 0$ case).** If $\gamma = 0$, the forward and backward balls are the same set $\{b' : c(b, b') < r\}$, and the two topologies coincide. The bitopological structure is trivial at $\gamma = 0$. This is another reason the framework emphasizes $\gamma > 0$.
+**Remark 5.3.6 (The $\gamma = 0$ case).** If $\gamma = 0$, the  balls are the set $\{b' : c(b, b') < r\}$, which still generates two topologies if the cost is asymmetric.
 
 ## 5.4 Join, meet, and average topologies
 
