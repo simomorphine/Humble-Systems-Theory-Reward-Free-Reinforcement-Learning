@@ -21,20 +21,25 @@ where:
 **Assumption 7.1.2 (Bounded utility).** $|z(b, a, b')| \le Z_{\max} < \infty$ for all $(b, a, b')$.
 
 **Definition 7.1.3 (Complex return).** For a policy $\pi$ and initial state-action $(b, a)$, the *complex return* is
+
 $$G_t = \sum_{k=0}^\infty \lambda^k \, z(B_{t+k}, A_{t+k}, B_{t+k+1}), \qquad A_{t+k} \sim \pi(\cdot \mid B_{t+k}).$$
 
 **Definition 7.1.4 (Complex action-value function).** The *complex action-value function* under $\pi$ is
+
 $$Q^\pi(b, a) = \mathbb{E}^\pi[G_t \mid B_t = b, A_t = a].$$
 
 **Definition 7.1.5 (Complex state-value function).** The *complex state-value function* under $\pi$ is
+
 $$V^\pi(b) = \mathbb{E}^\pi[G_t \mid B_t = b].$$
 
 **Proposition 7.1.6 (Absolute convergence).** Under Assumption 7.1.2, the complex return converges absolutely:
+
 $$\mathbb{E}^\pi[|G_t| \mid B_t = b, A_t = a] \le \frac{Z_{\max}}{1 - \lambda}.$$
 
 *Proof.* $|G_t| \le \sum_k \lambda^k |z(B_{t+k}, A_{t+k}, B_{t+k+1})| \le Z_{\max} \sum_k \lambda^k = Z_{\max}/(1-\lambda)$. Take expectations. $\square$
 
 **Definition 7.1.7 (Function space).** Let $\mathcal{Q} = \mathcal{B}(\mathcal{B} \times \mathcal{A}, \mathbb{C})$ be the Banach space of bounded complex-valued functions on $\mathcal{B} \times \mathcal{A}$, equipped with the sup-norm
+
 $$\|Q\|_\infty = \sup_{(b, a) \in \mathcal{B} \times \mathcal{A}} |Q(b, a)|.$$
 
 **Remark 7.1.8 (Complex vs. real Banach space).** The space $\mathcal{Q}$ is a complex Banach space, but it is also a real Banach space when scalar multiplication is restricted to $\mathbb{R}$. In this book, $\mathcal{Q}$ is treated as a complex Banach space; the sup-norm is the standard one. Completeness of $\mathcal{Q}$ under the sup-norm is standard.
@@ -42,24 +47,28 @@ $$\|Q\|_\infty = \sup_{(b, a) \in \mathcal{B} \times \mathcal{A}} |Q(b, a)|.$$
 ## 7.2 The evaluation operator
 
 **Definition 7.2.1 (Evaluation operator).** For a deterministic policy $\pi : \mathcal{B} \to \mathcal{A}$, the *evaluation operator* $T^\pi : \mathcal{Q} \to \mathcal{Q}$ is
+
 $$(T^\pi Q)(b, a) = \mathbb{E}_{b' \sim p(\cdot \mid b, a)}\left[z(b, a, b') + \lambda \, Q(b', \pi(b'))\right].$$
 
 **Proposition 7.2.2 (Well-definedness).** $T^\pi$ maps $\mathcal{Q}$ into itself.
 
 *Proof.* For $Q \in \mathcal{Q}$ with $\|Q\|_\infty < \infty$:
+
 $$|(T^\pi Q)(b, a)| \le \mathbb{E}_{b'}[|z(b, a, b')| + \lambda |Q(b', \pi(b'))|] \le Z_{\max} + \lambda \|Q\|_\infty < \infty. \qquad \square$$
 
 **Theorem 7.2.3 (Evaluation contraction).** $T^\pi$ is a $\lambda$-contraction on $(\mathcal{Q}, \|\cdot\|_\infty)$.
 
 *Proof.* For $Q_1, Q_2 \in \mathcal{Q}$ and any $(b, a)$:
+
 $$|(T^\pi Q_1)(b, a) - (T^\pi Q_2)(b, a)| = \left|\mathbb{E}_{b'}\left[\lambda Q_1(b', \pi(b')) - \lambda Q_2(b', \pi(b'))\right]\right| \le \lambda \, \mathbb{E}_{b'}\left[|Q_1(b', \pi(b')) - Q_2(b', \pi(b'))|\right] \le \lambda \, \|Q_1 - Q_2\|_\infty.$$
+
 The first inequality uses the modulus of expectation (Proposition 2.3.2); the second uses the definition of the sup-norm. Taking the supremum over $(b, a)$ gives the contraction. $\square$
 
 **Corollary 7.2.4 (Existence and uniqueness).** For any deterministic policy $\pi$, there exists a unique $Q^\pi \in \mathcal{Q}$ satisfying $T^\pi Q^\pi = Q^\pi$, and $Q^\pi = \lim_{n \to \infty} (T^\pi)^n Q_0$ for any $Q_0 \in \mathcal{Q}$.
 
 *Proof.* Banach fixed-point theorem applied to $T^\pi$ on the complete space $(\mathcal{Q}, \|\cdot\|_\infty)$. $\square$
 
-**Corollary 7.2.5 (Bound on the fixed point).** $\|Q^\pi\|_\infty \le Z_{\max}/(1-\lambda)$.
+**Corollary 7.2.5 (Bound on the fixed point).** $\mid Q^\pi \mid_\infty \le Z_{\max}/(1-\lambda)$.
 
 *Proof.* $|Q^\pi(b, a)| = |T^\pi Q^\pi(b, a)| \le Z_{\max} + \lambda \|Q^\pi\|_\infty$. Rearranging gives the bound. $\square$
 
