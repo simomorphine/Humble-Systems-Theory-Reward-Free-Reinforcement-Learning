@@ -1,6 +1,5 @@
 # Chapter 2 — The Complex Quasi-Metric
 
-*(Revised with exercises)*
 
 ## 2.1 Belief space and complex cost
 
