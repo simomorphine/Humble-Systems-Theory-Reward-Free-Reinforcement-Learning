@@ -165,7 +165,7 @@ The complex evaluation operator is a $\lambda$-contraction. This is the first co
 
 **Exercise 3.3.** Let $\phi(b) = -b^2$ on $\mathcal{B} = \mathbb{R}$, and let the dynamics be a random walk with $B_{t+1} = B_t + \epsilon$ where $\epsilon$ is a symmetric random variable with mean zero. Show that $\phi$ is a submartingale along any trajectory. Compute $Q_I^\pi(b, a)$.
 
-**Exercise 3.4.** Let $\phi(b) = b$ on $\mathcal{B} = \mathbb{R}$, and let the dynamics be a random walk with $B_{t+1} = B_t + \epsilon$, $\mathbb{E}[\epsilon] = 0$. Is $\phi$ a submartingale? A martingale? Compute $Q_I^\pi(b, a)$.
+**Exercise 3.4.** Let $\phi(b) = b$ on $\mathcal{B} = \mathbb{R}$, and let the dynamics be a random walk with $B_{t+1} = B_t + \epsilon$, $\mathbb{E}[\epsilon] = 0$. Is $\phi$ a supermartingale? A martingale? Compute $Q_I^\pi(b, a)$.
 
 **Exercise 3.5.** Prove that if $\phi$ is a martingale (i.e., $\mathbb{E}[\phi(B_{t+1}) \mid B_t] = \phi(B_t)$), then $Q_I^\pi(b, a) = 0$ for all $(b, a)$.
 
