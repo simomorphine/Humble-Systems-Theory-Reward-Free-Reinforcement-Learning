@@ -1,6 +1,5 @@
 # Chapter 1 — Why Scalar Cost Is Inadequate
 
-*(Revised with exercises)*
 
 ## 1.1 The collapse
 
