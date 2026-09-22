@@ -1,6 +1,5 @@
 # Chapter 4 — The $\gamma$-Distance Family
 
-*(Revised with exercises)*
 
 ## 4.1 Definition and basic properties
 
