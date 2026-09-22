@@ -124,7 +124,15 @@ $$Q^{\*+}(b, a) - Q^{\*-}(b, a) = \lambda \left(C^+(b) - C^-(b)\right). \qquad \
 
 **Corollary 9.6.4 (Gap is action-independent).** The disequilibrium gap $\Delta Q^\*(b, a)$ does not depend on $a$. It is a function of $b$ alone.
 
-**Corollary 9.6.5 (Gap identity).** Let $\Theta(b') = Q^{\*-}(b', a^+(b')) - Q^{\*+}(b', a^-(b'))$ where $a^+(b') = \pi^+_{Q^{\*-}}(b')$ and $a^-(b') = \pi^-_{Q^{\*+}}(b')$. Then
+**Corollary 9.6.5 (Gap identity).** Let $\Theta(b') = Q^{\*-}(b', a^+(b')) - Q^{\*+}(b', a^-(b'))$ where 
+
+$$a^+(b') = \pi^+_{Q^{\*-}}(b')$$ 
+
+and 
+
+$$a^-(b') = \pi^-_{Q^{\*+}}(b')$$ 
+
+Then
 
 $$\Delta Q^\*(b) = \lambda \, \mathbb{E}_{b'}[\Theta(b')].$$
 
@@ -152,7 +160,7 @@ If the two-selector formulation is to yield a contraction theorem, one of severa
 
 ### 9.7.1 Gap-stable selectors
 
-**Definition 9.7.1 (Gap-stable selector).** A selector $\pi_Q$ is *gap-stable with margin $\delta > 0$* on a set $\mathcal{G} \subseteq \mathcal{Q}$ if, for every $Q \in \mathcal{G}$ and every $b \in \mathcal{B}$,
+**Definition 9.7.1 (Gap-stable selector).** A selector $\pi_Q$ is *gap-stable with margin* $\delta > 0$ on a set $\mathcal{G} \subseteq \mathcal{Q}$ if, for every $Q \in \mathcal{G}$ and every $b \in \mathcal{B}$,
 $$|Q(b, \pi_Q(b))| \le |Q(b, a)| - \delta \qquad \text{for all } a \neq \pi_Q(b).$$
 
 **Proposition 9.7.2 (Contraction with gap-stable selectors).** Let $\mathcal{G}$ be a subset of $\mathcal{Q}$ on which the selector $\pi_Q$ is gap-stable with margin $\delta > 0$. Then on $\mathcal{G}$, the Bellman optimality operator $T$ is a contraction with modulus $\lambda$, provided the perturbation radius is small enough that the selector remains constant.
@@ -164,9 +172,10 @@ $$|Q(b, \pi_Q(b))| \le |Q(b, a)| - \delta \qquad \text{for all } a \neq \pi_Q(b)
 ### 9.7.2 Smoothed selectors
 
 **Definition 9.7.4 (Soft modulus-greedy selector).** For $\tau > 0$, the *soft modulus-greedy selector* is
+
 $$\pi_\tau(a \mid b, Q) = \frac{\exp(-|Q(b, a)| / \tau)}{\sum_{a' \in \mathcal{A}} \exp(-|Q(b, a')| / \tau)}.$$
 
-**Proposition 9.7.5 (Soft Bellman operator is a contraction).** Define $T_\tau$ by replacing the hard selector with the soft selector. Then $T_\tau$ is a contraction on $(\mathcal{Q}, \|\cdot\|_\infty)$ for sufficiently large $\tau$ relative to $\lambda$, and its fixed point $Q_\tau^*$ satisfies $Q_\tau^* \to Q^*$ as $\tau \to 0$ whenever $Q^*$ exists.
+**Proposition 9.7.5 (Soft Bellman operator is a contraction).** Define $T_\tau$ by replacing the hard selector with the soft selector. Then $T_\tau$ is a contraction on $(\mathcal{Q}, \mid\cdot\mid_\infty)$ for sufficiently large $\tau$ relative to $\lambda$, and its fixed point $Q_\tau^\*$ satisfies $Q_\tau^\* \to Q^\*$ as $\tau \to 0$ whenever $Q^\*$ exists.
 
 *Sketch.* The soft selector is Lipschitz in $Q$ with Lipschitz constant $O(1/\tau)$. The Bellman operator with a Lipschitz selector is a contraction when $\lambda(1 + \text{Lip}(\pi_\tau)) < 1$, i.e. for sufficiently large $\tau$ relative to $\lambda$. The limit $\tau \to 0$ recovers the hard selector. $\square$
 
@@ -175,6 +184,7 @@ $$\pi_\tau(a \mid b, Q) = \frac{\exp(-|Q(b, a)| / \tau)}{\sum_{a' \in \mathcal{A
 ### 9.7.3 Phase-cone restriction
 
 **Definition 9.7.7 (Phase-cone subspace).** For $\theta \in [0, \pi/2)$, the *phase-cone subspace* is
+
 $$\mathcal{Q}_\theta = \{Q \in \mathcal{Q} : Q(b, a) \in C_\theta \text{ for all } (b, a)\}.$$
 
 **Proposition 9.7.8 (Contraction on the phase-cone subspace).** On $\mathcal{Q}_\theta \cap \overline{B(0, M)}$ for sufficiently small $\theta$ and $M$, the Bellman optimality operator $T$ is a contraction.
@@ -192,7 +202,8 @@ Despite the failure of the naive contraction proof, the two-selector formulation
 **First, it isolates the difficulty.** The single-selector operator is a special case of the two-selector operator (when $Q^+ = Q^-$). The two-selector formulation makes the source of the difficulty visible: the discontinuity of the selector, not the structure of the operator.
 
 **Second, it provides a natural interpretation of asymmetry.** The two value functions $Q^+$ and $Q^-$ correspond to the forward and backward reachability structures of the framework. Their difference,
-$$\Delta Q^* = Q^{*+} - Q^{*-},$$
+
+$$\Delta Q^\* = Q^{\*+} - Q^{\*-},$$
 is the framework's measure of disequilibrium. It is a complex-valued function on state space, and it vanishes when forward and backward selectors agree.
 
 **Third, it opens a path to a fixed-point theory via Schauder.** Even if the contraction is not established, the two-selector operator has a fixed point for finite cMDPs, by Schauder's theorem applied to a smoothed version (Theorem 11.3.4). The two-selector formulation gives a natural setting for this argument.
@@ -203,11 +214,15 @@ is the framework's measure of disequilibrium. It is a complex-valued function on
 
 ## 9.9 Epistemic equilibrium in the two-selector formulation
 
-**Definition 9.9.1 (Epistemic equilibrium).** A pair $(Q^{*+}, Q^{*-})$ is in *epistemic equilibrium* if it is a fixed point of $T_{\rightarrow\leftarrow}$ and $Q^{*+} = Q^{*-}$.
+**Definition 9.9.1 (Epistemic equilibrium).** A pair $(Q^{\*+}, Q^{\*-})$ is in *epistemic equilibrium* if it is a fixed point of $T_{\rightarrow\leftarrow}$ and $Q^{\*+} = Q^{\*-}$.
 
-**Proposition 9.9.2 (Single-selector fixed points are epistemic equilibria).** If $Q^*$ is a fixed point of the single-selector operator $T$, then $(Q^*, Q^*)$ is a fixed point of $T_{\rightarrow\leftarrow}$.
+**Proposition 9.9.2 (Single-selector fixed points are epistemic equilibria).** If $Q^\*$ is a fixed point of the single-selector operator $T$, then $(Q^\*, Q^\*)$ is a fixed point of $T_{\rightarrow\leftarrow}$.
 
-*Proof.* If $\pi_{Q^*} = \pi^+_{Q^*} = \pi^-_{Q^*}$ (which holds whenever there are no ties), then $T^+ Q^* = T^- Q^* = TQ^* = Q^*$. Hence $T_{\rightarrow\leftarrow}(Q^*, Q^*) = (Q^*, Q^*)$. $\square$
+*Proof.* If 
+
+$$\pi_{Q^\*} = \pi^+_{Q^\*} = \pi^-_{Q^\*}$$ 
+
+which holds whenever there are no ties, then $T^+ Q^\* = T^- Q^\* = TQ^\* = Q^\*$. Hence $T_{\rightarrow\leftarrow}(Q^\*, Q^\*) = (Q^\*, Q^\*)$. $\square$
 
 **Remark 9.9.3 (Equilibrium and disequilibrium).** At epistemic equilibrium, the forward and backward value functions agree. The system has no preferred direction. When they differ, the system has a preferred direction, and the gap $\Delta Q^*$ measures the disequilibrium. The framework's central interpretive claim (Chapter 13) is that the system converges to epistemic equilibrium under the HST Equilibrium Axiom.
 
