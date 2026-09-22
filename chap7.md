@@ -79,7 +79,9 @@ The first inequality uses the modulus of expectation (Proposition 2.3.2); the se
 The evaluation equation decouples in the real and imaginary parts.
 
 **Proposition 7.3.1 (Component Bellman equations).** $Q^\pi = Q_R^\pi + i \, Q_I^\pi$, where
+
 $$Q_R^\pi(b, a) = \mathbb{E}_{b'}[c(b, a, b') + \lambda \, Q_R^\pi(b', \pi(b'))],$$
+
 $$Q_I^\pi(b, a) = \mathbb{E}_{b'}[d(b, a, b') + \lambda \, Q_I^\pi(b', \pi(b'))].$$
 
 *Proof.* Taking real and imaginary parts of the complex Bellman equation. The transition kernel $p$ is real, so the real and imaginary parts do not mix. $\square$
@@ -87,7 +89,9 @@ $$Q_I^\pi(b, a) = \mathbb{E}_{b'}[d(b, a, b') + \lambda \, Q_I^\pi(b', \pi(b'))]
 **Corollary 7.3.2 (Independent evaluation).** $Q_R^\pi$ and $Q_I^\pi$ can be computed independently. The evaluation problem decomposes into two real-valued Bellman equations.
 
 **Corollary 7.3.3 (Closed form for $Q_I^\pi$).** If $d$ takes the potential-difference form $d(b, a, b') = \phi(b') - \phi(b)$, then $Q_I^\pi$ has the closed form
+
 $$Q_I^\pi(b, a) = -\phi(b) + (1 - \lambda) \, \mathbb{E}^\pi\left[\sum_{k=0}^\infty \lambda^k \, \phi(B_{t+k+1}) \,\middle|\, B_t = b, A_t = a\right],$$
+
 by Theorem 3.1.3.
 
 *Proof.* Theorem 3.1.3 applies directly to the imaginary component. $\square$
