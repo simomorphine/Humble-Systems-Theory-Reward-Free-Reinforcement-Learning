@@ -88,7 +88,7 @@ where the expectation is under $\pi$ with $B_t = b$, $A_t = a$.
 
 *Proof.* Combine Theorem 3.1.3 and Proposition 3.3.3. $\square$
 
-**Remark 3.3.5 (Sign convention).** With $\phi = -H$, the debt $d = \phi(b') - \phi(b) = H(\Theta \mid b) - H(\Theta \mid b')$ is the reduction in uncertainty. This is non-negative when the transition reduces uncertainty, which is the typical case. The sign convention is consistent: positive debt = information gain.
+**Remark 3.3.5 (Sign convention).** With $\phi = -H$, the debt $d = \phi(b') - \phi(b) = H(\Theta \mid b) - H(\Theta \mid b')$ is the reduction in uncertainty. This is negative when the transition reduces uncertainty, which is the typical case. The sign convention is consistent: negative debt = information gain.
 
 **Remark 3.3.6 (What the interpretation does and does not give).** Under Assumption 3.3.1:
 
