@@ -4,16 +4,17 @@
 
 ## 6.1 Fixed points revisited
 
-**Definition 6.1.1 (Fixed point of a state).** A state $b^* \in \mathcal{B}$ is a *fixed point* if
-$$Q(b^*, b^*) = 0.$$
+**Definition 6.1.1 (Fixed point of a state).** A state $b^\* \in \mathcal{B}$ is a *fixed point* if
 
-**Remark 6.1.2 (Local nature of the definition).** The definition is local: it says that a transition from $b^*$ to $b^*$ has zero complex cost. It does not say that the state is absorbing, or that the system remains there. It says that, with respect to itself, the state has no cost and no debt.
+$$Q(b^\*, b^\*) = 0.$$
 
-**Proposition 6.1.3 (Fixed points satisfy the equilibrium condition).** If $b^*$ is a fixed point and the quasi-metric is continuous at $b^*$ in $\tau_{\text{avg}}$, then $b^* \in E_\tau$ for every $\tau \in \{\tau_+, \tau_-, \tau_{\text{avg}}, \tau_+ \vee \tau_-, \tau_+ \wedge \tau_-\}$.
+**Remark 6.1.2 (Local nature of the definition).** The definition is local: it says that a transition from $b^\*$ to $b^\*$ has zero complex cost. It does not say that the state is absorbing, or that the system remains there. It says that, with respect to itself, the state has no cost and no debt.
 
-*Proof.* By continuity, for any $\epsilon > 0$ there exists $\delta > 0$ such that $d_{\text{avg}}(b^*, b') < \delta$ implies $b' \in B_{\text{avg}}(b^*, \epsilon)$. Since $b^* \in B_{\text{avg}}(b^*, \delta)$ for all $\delta > 0$ (as $d_{\text{avg}}(b^*, b^*) = 0$), we have $b^* \in U_{\text{pre}}$ and hence $b^* \in \overline{U_{\text{pre}}}^\tau$ for every $\tau$. $\square$
+**Proposition 6.1.3 (Fixed points satisfy the equilibrium condition).** If $b^\*$ is a fixed point and the quasi-metric is continuous at $b^\*$ in $\tau_{\text{avg}}$, then $b^\* \in E_\tau$ for every $\tau \in \{\tau_+, \tau_-, \tau_{\text{avg}}, \tau_+ \vee \tau_-, \tau_+ \wedge \tau_-\}$.
 
-**Remark 6.1.4 (Sufficient conditions for continuity).** The quasi-metric is continuous at $b^*$ if the cost and debt functions are continuous at $b^*$ in the relevant topology. This holds in all standard settings (finite state spaces, smooth state spaces with continuous cost functions).
+*Proof.* By continuity, for any $\epsilon > 0$ there exists $\delta > 0$ such that $d_{\text{avg}}(b^\*, b') < \delta$ implies $b' \in B_{\text{avg}}(b^\*, \epsilon)$. Since $b^\* \in B_{\text{avg}}(b^\*, \delta)$ for all $\delta > 0$ (as $d_{\text{avg}}(b^\*, b^\*) = 0$), we have $b^* \in U_{\text{pre}}$ and hence $b^* \in \overline{U_{\text{pre}}}^\tau$ for every $\tau$. $\square$
+
+**Remark 6.1.4 (Sufficient conditions for continuity).** The quasi-metric is continuous at $b^\*$ if the cost and debt functions are continuous at $b^\*$ in the relevant topology. This holds in all standard settings (finite state spaces, smooth state spaces with continuous cost functions).
 
 ## 6.2 Conditions on the potential
 
