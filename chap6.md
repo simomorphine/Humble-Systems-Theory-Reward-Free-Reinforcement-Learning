@@ -93,7 +93,7 @@ $$E_\vee = E_{\text{avg}} = E_\wedge = E_\rightarrow = E_\leftarrow.$$
 
 ## 6.5 Local structure of $E_\tau$
 
-**Definition 6.5.1 (Neighborhood of $E_\tau$).** For $b \in E_\tau$ and $\epsilon > 0$, the *$\epsilon$-neighborhood of $E_\tau$ in $\tau$* is
+**Definition 6.5.1 (Neighborhood of $E_\tau$).** For $b \in E_\tau$ and $\epsilon > 0$, the $\epsilon$-neighborhood of $E_\tau$ in $\tau$ is
 $$N_\tau(E_\tau, \epsilon) = \{b' \in \mathcal{B} : \exists b \in E_\tau, \, d_\tau(b, b') < \epsilon\},$$
 where $d_\tau$ is the metric generating $\tau$ (or, for the join and meet topologies, the appropriate quasi-metric).
 
@@ -105,7 +105,7 @@ where $d_\tau$ is the metric generating $\tau$ (or, for the join and meet topolo
 
 *Proof.* Immediate. $\square$
 
-**Proposition 6.5.4 (Boundary of $E_\tau$).** The boundary $\partial E_\tau = E_\tau \setminus \operatorname{int}(E_\tau)$ is contained in $E_\tau$ and may be non-empty.
+**Proposition 6.5.4 (Boundary of $E_\tau$).** The boundary $\partial E_\tau = E_\tau \setminus \mathrm{int}(E_\tau)$ is contained in $E_\tau$ and may be non-empty.
 
 *Proof.* Standard topological fact. The boundary is non-empty if $U_{\text{pre}}$ is not closed. $\square$
 
@@ -113,10 +113,12 @@ where $d_\tau$ is the metric generating $\tau$ (or, for the join and meet topolo
 
 ## 6.6 Convergence to equilibrium
 
-**Definition 6.6.1 (Convergence).** A trajectory $\{b_t\}_{t \ge 0}$ *converges to $E_\tau$* if, for every $\tau$-open neighborhood $U$ of $E_\tau$, there exists $T$ such that $b_t \in U$ for all $t \ge T$.
+**Definition 6.6.1 (Convergence).** A trajectory $\lbrace b_t\rbrace_{t \ge 0}$ converges to $E_\tau$ if, for every $\tau$-open neighborhood $U$ of $E_\tau$, there exists $T$ such that $b_t \in U$ for all $t \ge T$.
 
 **Theorem 6.6.2 (Convergence under Lyapunov contraction).** Suppose there exists a continuous function $V : \mathcal{B} \to \mathbb{R}_{\ge 0}$ and a constant $\kappa \in [0, 1)$ such that
+
 $$V(b_{t+1}) \le \kappa \, V(b_t)$$
+
 along the system's trajectories, and $V(b) = 0$ iff $b \in E_\tau$. Then every trajectory converges to $E_\tau$.
 
 *Proof.* $V(b_t) \le \kappa^t V(b_0) \to 0$. By continuity of $V$, for any $\tau$-neighborhood $U$ of $E_\tau$, there exists $\delta > 0$ such that $V(b) < \delta$ implies $b \in U$. Choose $T$ such that $\kappa^T V(b_0) < \delta$. $\square$
