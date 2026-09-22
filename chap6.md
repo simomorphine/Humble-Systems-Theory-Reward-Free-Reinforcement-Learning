@@ -123,9 +123,9 @@ along the system's trajectories, and $V(b) = 0$ iff $b \in E_\tau$. Then every t
 
 *Proof.* $V(b_t) \le \kappa^t V(b_0) \to 0$. By continuity of $V$, for any $\tau$-neighborhood $U$ of $E_\tau$, there exists $\delta > 0$ such that $V(b) < \delta$ implies $b \in U$. Choose $T$ such that $\kappa^T V(b_0) < \delta$. $\square$
 
-**Proposition 6.6.3 (Lyapunov function candidates).** The function $V(b, a) = |Q^*(b, a)|^2$ for a fixed point $Q^*$ is a candidate Lyapunov function. Whether it is strictly decreasing depends on the policy and the environment.
+**Proposition 6.6.3 (Lyapunov function candidates).** The function $V(b, a) = |Q^\*(b, a)|^2$ for a fixed point $Q^\*$ is a candidate Lyapunov function. Whether it is strictly decreasing depends on the policy and the environment.
 
-*Proof.* $V \ge 0$, $V = 0$ iff $Q^* = 0$. Strict decrease requires $\mathbb{E}[|Q^*(B_{t+1}, \cdot)|^2 \mid B_t = b] < |Q^*(b, \cdot)|^2$ for $Q^*(b, \cdot) \neq 0$, which is not automatic. $\square$
+*Proof.* $V \ge 0$, $V = 0$ iff $Q^\* = 0$. Strict decrease requires $\mathbb{E}[|Q^\*(B_{t+1}, \cdot)|^2 \mid B_t = b] < |Q^\*(b, \cdot)|^2$ for $Q^\*(b, \cdot) \neq 0$, which is not automatic. $\square$
 
 **Remark 6.6.4 (The Lyapunov picture).** The Lyapunov picture is the bridge between the static equilibrium theory of this chapter and the dynamic convergence theory of Part IV. The framework provides candidate Lyapunov functions; whether they satisfy the strict decrease condition is a substantive question addressed in Chapter 12.
 
