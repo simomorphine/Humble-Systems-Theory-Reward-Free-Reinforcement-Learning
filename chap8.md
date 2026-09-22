@@ -70,11 +70,19 @@ The obstruction has three distinguishable aspects, each of which can be seen ind
 
 ## 8.4 The status of the counterexample question
 
-**Proposition 8.4.1 (Restricted positive result).** Define the *scalar modulus operator* $\hat{T} : \mathcal{B}(\mathcal{B}, \mathbb{R}_{\ge 0}) \to \mathcal{B}(\mathcal{B}, \mathbb{R}_{\ge 0})$ by
+**Proposition 8.4.1 (Restricted positive result).** Define the *scalar modulus operator* 
+
+$$\hat{T} : \mathcal{B}(\mathcal{B}, \mathbb{R}_{\geq 0}) \rightarrow \mathcal{B}(\mathcal{B}, \mathbb{R}_{\geq 0})$$ 
+
+by
 
 $$(\hat{T}V)(b) = \min_{a \in \mathcal{A}} \mathbb{E}_{b' \sim p(\cdot \mid b, a)}\left[|z(b, a, b')| + \lambda \, V(b')\right].$$
 
-Then $\hat{T}$ is a $\lambda$-contraction on $(\mathcal{B}(\mathcal{B}, \mathbb{R}_{\ge 0}), \|\cdot\|_\infty)$ with a unique fixed point $V^\dagger$, and value iteration converges at rate $\lambda^n$.
+Then $\hat{T}$ is a $\lambda$-contraction on 
+
+$$(\mathcal{B}(\mathcal{B}, \mathbb{R}_{\ge 0}), \|\cdot\|_\infty)$$ 
+
+with a unique fixed point $V^\dagger$, and value iteration converges at rate $\lambda^n$.
 
 *Proof.* For $V_1, V_2$:
 
@@ -100,45 +108,58 @@ $$\|TQ_1 - TQ_2\|_\infty > \lambda \, \|Q_1 - Q_2\|_\infty?$$
 
 Despite the uncertainty about contraction, the fixed point (if it exists) has a constrained location.
 
-**Proposition 8.5.1 (Non-negative imaginary part at the fixed point).** If $Q^* \in \mathcal{Q}$ satisfies $TQ^* = Q^*$ and the potential $\phi$ satisfies the submartingale condition, then
+**Proposition 8.5.1 (Non-negative imaginary part at the fixed point).** If $Q^\* \in \mathcal{Q}$ satisfies $TQ^\* = Q^\*$ and the potential $\phi$ satisfies the submartingale condition, then
 
-$$\mathrm{Im} Q^*(b, a) \ge 0 \qquad \text{for all } (b, a).$$
+$$\mathrm{Im} Q^\*(b, a) \ge 0 \qquad \text{for all } (b, a).$$
 
-*Proof.* The imaginary part of the fixed point satisfies the evaluation equation for the policy $\pi_{Q^*}$:
-$$Q_I^*(b, a) = \mathbb{E}_{b'}[d(b, a, b') + \lambda \, Q_I^*(b', \pi_{Q^*}(b'))].$$
-By Proposition 3.2.2, $Q_I^* \ge 0$. $\square$
+*Proof.* The imaginary part of the fixed point satisfies the evaluation equation for the policy $\pi_{Q^\*}$:
 
-**Proposition 8.5.2 (Real part is non-negative).** Under the same conditions, $\operatorname{Re} Q^*(b, a) \ge 0$ for all $(b, a)$.
+$$Q_I^\*(b, a) = \mathbb{E}_{b'}[d(b, a, b') + \lambda \, Q_I^\*(b', \pi_{Q^\*}(b'))].$$
+
+By Proposition 3.2.2, $Q_I^\* \ge 0$. $\square$
+
+**Proposition 8.5.2 (Real part is non-negative).** Under the same conditions, $\mathrm{Re} Q^\*(b, a) \ge 0$ for all $(b, a)$.
 
 *Proof.* The real part satisfies
-$$Q_R^*(b, a) = \mathbb{E}_{b'}[c(b, a, b') + \lambda \, Q_R^*(b', \pi_{Q^*}(b'))].$$
-Since $c \ge 0$ and the expectation preserves non-negativity, iterating the Bellman equation gives $Q_R^* \ge 0$. $\square$
 
-**Corollary 8.5.3 (First quadrant).** Under the conditions of Propositions 8.5.1 and 8.5.2, $Q^*(b, a)$ lies in the first quadrant:
-$$Q^*(b, a) \in \{w \in \mathbb{C} : \operatorname{Re}(w) \ge 0, \operatorname{Im}(w) \ge 0\}.$$
+$$Q_R^\*(b, a) = \mathbb{E}_{b'}[c(b, a, b') + \lambda \, Q_R^*(b', \pi_{Q^\*}(b'))].$$
+
+Since $c \ge 0$ and the expectation preserves non-negativity, iterating the Bellman equation gives $Q_R^\* \ge 0$. $\square$
+
+**Corollary 8.5.3 (First quadrant).** Under the conditions of Propositions 8.5.1 and 8.5.2, $Q^\*(b, a)$ lies in the first quadrant:
+
+$$Q^\*(b, a) \in \{w \in \mathbb{C} : \mathrm{Re}(w) \ge 0, \mathrm{Im}(w) \ge 0\}.$$
 
 *Proof.* Combine the two propositions. $\square$
 
-**Remark 8.5.4 (The fixed point is confined to a quarter-plane).** Under the submartingale condition, the fixed point of $T$ lies in the first quadrant. This is a substantial structural constraint: the arguments of $Q^*(b, a)$ lie in $[0, \pi/2]$. Whether this constraint can be leveraged to prove contraction is the subject of Section 8.6.
+**Remark 8.5.4 (The fixed point is confined to a quarter-plane).** Under the submartingale condition, the fixed point of $T$ lies in the first quadrant. This is a substantial structural constraint: the arguments of $Q^\*(b, a)$ lie in $[0, \pi/2]$. Whether this constraint can be leveraged to prove contraction is the subject of Section 8.6.
 
 ## 8.6 The phase cone
 
 The quarter-plane constraint suggests a refinement: if the arguments of the selected values are confined to a small range, the obstruction may weaken.
 
 **Definition 8.6.1 (Phase cone).** For $\theta \in [0, \pi]$, the *phase cone* of half-width $\theta$ is
-$$C_\theta = \{w \in \mathbb{C} \setminus \{0\} : |\operatorname{Arg}(w)| \le \theta\} \cup \{0\}.$$
+
+$$C_\theta = \{w \in \mathbb{C} \setminus \{0\} : |\mathrm{Arg}(w)| \le \theta\} \cup \{0\}.$$
 
 **Proposition 8.6.2 (Contraction on a phase cone).** Let $M > 0$ and suppose $Q_1, Q_2 \in \mathcal{Q}$ satisfy $Q_i(b, a) \in C_\theta \cap \overline{B(0, M)}$ for all $(b, a)$, $i = 1, 2$. Then
+
 $$\|TQ_1 - TQ_2\|_\infty \le \lambda \, (1 + 2\sin\theta) \, \|Q_1 - Q_2\|_\infty + \lambda \, 2\sin\theta \cdot M.$$
 
 *Proof.* For each $b'$, let $a_1 = \pi_{Q_1}(b')$ and $a_2 = \pi_{Q_2}(b')$. By Proposition 8.2.1,
+
 $$|Q_1(b', a_1) - Q_2(b', a_2)| \le \|Q_1 - Q_2\|_\infty + |Q_2(b', a_1) - Q_2(b', a_2)|.$$
+
 Since $Q_2(b', a_2)$ minimizes the modulus and both values are in $C_\theta$, we have $|Q_2(b', a_2)| \le |Q_2(b', a_1)| \le M$, and the arguments of $Q_2(b', a_1)$ and $Q_2(b', a_2)$ differ by at most $2\theta$. Hence
+
 $$|Q_2(b', a_1) - Q_2(b', a_2)| \le 2\sin\theta \cdot |Q_2(b', a_1)| \le 2\sin\theta \cdot M.$$
+
 Substituting gives the bound. Taking expectations and multiplying by $\lambda$ gives the stated result. $\square$
 
 **Corollary 8.6.3 (Contraction when $M \le \|Q_1 - Q_2\|_\infty$).** If the bound $M$ on the cone values satisfies $M \le \|Q_1 - Q_2\|_\infty$, then
+
 $$\|TQ_1 - TQ_2\|_\infty \le \lambda \, (1 + 4\sin\theta) \, \|Q_1 - Q_2\|_\infty.$$
+
 If in addition $\theta < \arcsin((1/\lambda - 1)/4)$, the factor $\lambda(1 + 4\sin\theta) < 1$ and $T$ is a contraction.
 
 *Proof.* Substituting $M \le \|Q_1 - Q_2\|_\infty$ into Proposition 8.6.2 gives the bound. The condition on $\theta$ ensures the factor is less than $1$. $\square$
