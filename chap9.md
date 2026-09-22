@@ -108,17 +108,21 @@ Even though the two-selector operator does not resolve OP1, it introduces a natu
 **Definition 9.6.1 (Disequilibrium gap).** For $(Q^+, Q^-) \in \mathcal{Q} \times \mathcal{Q}$, the *disequilibrium gap* is
 $$\Delta Q = Q^+ - Q^- \in \mathcal{Q}.$$
 
-**Definition 9.6.2 (Epistemic equilibrium).** A pair $(Q^{*+}, Q^{*-})$ is in *epistemic equilibrium* if it is a fixed point of $T_{\rightarrow\leftarrow}$ and $\Delta Q^* = 0$.
+**Definition 9.6.2 (Epistemic equilibrium).** A pair $(Q^{\*+}, Q^{\*-})$ is in *epistemic equilibrium* if it is a fixed point of $T_{\rightarrow\leftarrow}$ and $\Delta Q^\* = 0$.
 
 **Proposition 9.6.3 (Gap structure).** At a fixed point of $T_{\rightarrow\leftarrow}$,
-$$\Delta Q^*(b, a) = \lambda \left(C^+(b) - C^-(b)\right),$$
+
+$$\Delta Q^\*(b, a) = \lambda \left(C^+(b) - C^-(b)\right),$$
+
 where
-$$C^+(b) = \mathbb{E}_{b'}[Q^{*-}(b', \pi^+_{Q^{*-}}(b'))], \qquad C^-(b) = \mathbb{E}_{b'}[Q^{*+}(b', \pi^-_{Q^{*+}}(b'))].$$
+
+$$C^+(b) = \mathbb{E}_{b'}[Q^{\*-}(b', \pi^+_{Q^{\*-}}(b'))], \qquad C^-(b) = \mathbb{E}_{b'}[Q^{\*+}(b', \pi^-_{Q^{\*+}}(b'))].$$
 
 *Proof.* Subtract the two fixed-point equations:
-$$Q^{*+}(b, a) - Q^{*-}(b, a) = \lambda \left(C^+(b) - C^-(b)\right). \qquad \square$$
 
-**Corollary 9.6.4 (Gap is action-independent).** The disequilibrium gap $\Delta Q^*(b, a)$ does not depend on $a$. It is a function of $b$ alone.
+$$Q^{\*+}(b, a) - Q^{\*-}(b, a) = \lambda \left(C^+(b) - C^-(b)\right). \qquad \square$$
+
+**Corollary 9.6.4 (Gap is action-independent).** The disequilibrium gap $\Delta Q^\*(b, a)$ does not depend on $a$. It is a function of $b$ alone.
 
 **Corollary 9.6.5 (Gap identity).** Let $\Theta(b') = Q^{*-}(b', a^+(b')) - Q^{*+}(b', a^-(b'))$ where $a^+(b') = \pi^+_{Q^{*-}}(b')$ and $a^-(b') = \pi^-_{Q^{*+}}(b')$. Then
 $$\Delta Q^*(b) = \lambda \, \mathbb{E}_{b'}[\Theta(b')].$$
