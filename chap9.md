@@ -30,24 +30,29 @@ with ties broken by the *reverse* deterministic rule.
 ## 9.3 The two-selector operator
 
 **Definition 9.3.1 (Component operators).** Define $T^+, T^- : \mathcal{Q} \to \mathcal{Q}$ by
+
 $$(T^+ Q)(b, a) = \mathbb{E}_{b' \sim p(\cdot \mid b, a)}\left[z(b, a, b') + \lambda \, Q(b', \pi^+_Q(b'))\right],$$
+
 $$(T^- Q)(b, a) = \mathbb{E}_{b' \sim p(\cdot \mid b, a)}\left[z(b, a, b') + \lambda \, Q(b', \pi^-_Q(b'))\right].$$
 
 **Definition 9.3.2 (Two-selector operator).** The *two-selector Bellman operator* is
+
 $$T_{\rightarrow\leftarrow} : \mathcal{Q} \times \mathcal{Q} \to \mathcal{Q} \times \mathcal{Q},$$
+
 $$T_{\rightarrow\leftarrow}(Q^+, Q^-) = (T^+ Q^-, \ T^- Q^+).$$
 
 The forward component uses the backward selector of $Q^-$, and the backward component uses the forward selector of $Q^+$. This cross-coupling is the essential feature.
 
 **Proposition 9.3.3 (Well-definedness).** $T_{\rightarrow\leftarrow}$ maps $\mathcal{Q} \times \mathcal{Q}$ into itself.
 
-*Proof.* For $Q^+, Q^- \in \mathcal{Q}$ with bounded sup-norms, each component of $T_{\rightarrow\leftarrow}(Q^+, Q^-)$ is bounded by $Z_{\max} + \lambda \max(\|Q^+\|_\infty, \|Q^-\|_\infty)$. $\square$
+*Proof.* For $Q^+, Q^- \in \mathcal{Q}$ with bounded sup-norms, each component of $T_{\rightarrow\leftarrow}(Q^+, Q^-)$ is bounded by $Z_{\max} + \lambda \max(\mid Q^+\mid_\infty, \|Q^-\|_\infty)$ $\square$
 
 **Remark 9.3.4 (Why the cross-coupling?).** The cross-coupling ensures that each selector is informed by the value function optimized under the other selector. If the coupling were same-sided (i.e. $T^+$ using $Q^+$), the two selectors would evolve independently, and the operator would reduce to the single-selector case applied twice. The cross-coupling is what enforces the bitopological structure and is the natural expression of the framework's geometry.
 
 ## 9.4 The product sup-norm
 
 **Definition 9.4.1 (Product sup-norm).** For $(Q^+, Q^-) \in \mathcal{Q} \times \mathcal{Q}$, define
+
 $$\|(Q^+, Q^-)\|_{\infty, \times} = \max\left(\|Q^+\|_\infty, \|Q^-\|_\infty\right).$$
 
 **Proposition 9.4.2 (Product space is a Banach space).** $(\mathcal{Q} \times \mathcal{Q}, \|\cdot\|_{\infty, \times})$ is a Banach space.
@@ -61,7 +66,9 @@ The natural question is whether $T_{\rightarrow\leftarrow}$ is a contraction. Th
 **Theorem 9.5.1 (Naive proof fails).** The naive contraction proof for $T_{\rightarrow\leftarrow}$ fails. The obstruction of Chapter 8 reappears in each component.
 
 *Proof.* Consider the forward component:
+
 $$(T^+ Q_1^-)(b, a) - (T^+ Q_2^-)(b, a) = \lambda \, \mathbb{E}_{b'}\left[Q_1^-(b', \pi^+_{Q_1^-}(b')) - Q_2^-(b', \pi^+_{Q_2^-}(b'))\right].$$
+
 The selector $\pi^+_{Q^-}$ depends on $Q^-$ itself, so the two terms in the difference are evaluated at *different* actions $a_1 = \pi^+_{Q_1^-}(b')$ and $a_2 = \pi^+_{Q_2^-}(b')$. The triangle-inequality bound gives
 $$|Q_1^-(b', a_1) - Q_2^-(b', a_2)| \le \|Q_1^- - Q_2^-\|_\infty + |Q_2^-(b', a_1)| + |Q_2^-(b', a_2)|,$$
 which is the same bound as in Proposition 8.2.1. The bound involves $|Q_2^-(b', a_1)|$ and $|Q_2^-(b', a_2)|$, which do not vanish as $Q_1^- \to Q_2^-$. The same obstruction applies to the backward component. $\square$
