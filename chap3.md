@@ -179,9 +179,9 @@ The complex evaluation operator is a $\lambda$-contraction. This is the first co
 
 **Exercise 3.10.** Verify the evaluation contraction (Theorem 3.5.2) for a specific cMDP with two states and two actions. Choose $Q_1, Q_2 \in \mathcal{Q}$ and compute both sides of the contraction inequality.
 
-**Exercise 3.11.** Suppose $\|Q_1 - Q_2\|_\infty = 1$. Give an example where $\|T^\pi Q_1 - T^\pi Q_2\|_\infty = \lambda$ (the contraction is tight), and an example where it is strictly less than $\lambda$.
+**Exercise 3.11.** Suppose $\mid Q_1 - Q_2\mid_\infty = 1$. Give an example where $\|T^\pi Q_1 - T^\pi Q_2\|_\infty = \lambda$ (the contraction is tight), and an example where it is strictly less than $\lambda$.
 
-**Exercise 3.12.** Show that the bound $\|Q^\pi\|_\infty \le Z_{\max}/(1-\lambda)$ is tight by constructing a cMDP where $|Q^\pi(b, a)| = Z_{\max}/(1-\lambda)$ for some $(b, a)$.
+**Exercise 3.12.** Show that the bound $\mid Q^\pi\mid_\infty \le Z_{\max}/(1-\lambda)$ is tight by constructing a cMDP where $|Q^\pi(b, a)| = Z_{\max}/(1-\lambda)$ for some $(b, a)$.
 
 **Exercise 3.13 (Open).** The real part of the Q-value does not telescope. But what if the cost function has additional structure — e.g., it is a sum of a potential difference and a constant? Does the real part admit a partial telescoping? Characterize the cost functions for which the real part has a closed form.
 
