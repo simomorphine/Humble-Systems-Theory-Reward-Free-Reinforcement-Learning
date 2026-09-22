@@ -88,7 +88,7 @@ where the expectation is under $\pi$ with $B_t = b$, $A_t = a$.
 
 *Proof.* Combine Theorem 3.1.3 and Proposition 3.3.3. $\square$
 
-**Remark 3.3.5 (Sign convention).** With $\phi = -H$, the debt $d = \phi(b') - \phi(b) = H(\Theta \mid b) - H(\Theta \mid b')$ is the reduction in uncertainty. This is negative when the transition reduces uncertainty, which is the typical case. The sign convention is consistent: negative debt = information gain.
+**Remark 3.3.5 (Sign convention).** With $\phi = -H$, the debt $d = \phi(b') - \phi(b) = H(\Theta \mid b) - H(\Theta \mid b')$ is the reduction in uncertainty. This is negative when the transition reduces uncertainty, which is the typical case. The sign convention is consistent: negative debt = information gain, positive debt = information loss.
 
 **Remark 3.3.6 (What the interpretation does and does not give).** Under Assumption 3.3.1:
 
@@ -109,11 +109,7 @@ $$Q_R^\pi(b, a) = \mathbb{E}^\pi\left[\sum_{k=0}^\infty \lambda^k \, c(B_{t+k}, 
 $$Q_R^\pi(b, a) = \mathbb{E}[c(b, b') + \lambda Q_R^\pi(b', \pi(b'))].$$
 Iterating gives the stated form. $\square$
 
-**Proposition 3.4.2 (No telescoping for the real part).** The real Q-value does not telescope to a closed form in general.
-
-*Proof.* If $c$ were a potential difference, it would be antisymmetric and cycle-invariant. The cost $c$ is non-negative and is not assumed antisymmetric or cycle-invariant. Hence no telescoping in general. $\square$
-
-**Remark 3.4.3 (Structural asymmetry of the framework).** The real part of the Q-value is path-dependent and irreversible; the imaginary part is path-independent and reversible. This distinction is the structural core of the framework, and it is what justifies treating the two components as parts of a complex number rather than as two independent real numbers.
+**Remark 3.4.2 (Structural asymmetry of the framework).** The real part of the Q-value is path-dependent and irreversible; the imaginary part is path-independent and reversible. This distinction is the structural core of the framework, and it is what justifies treating the two components as parts of a complex number rather than as two independent real numbers.
 
 ## 3.5 The complex Bellman equation
 
