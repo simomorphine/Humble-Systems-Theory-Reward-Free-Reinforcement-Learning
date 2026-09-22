@@ -166,9 +166,9 @@ If in addition $\theta < \arcsin((1/\lambda - 1)/4)$, the factor $\lambda(1 + 4\
 
 **Remark 8.6.4 (The cone bound is conditional).** Proposition 8.6.2 requires both the phase-cone assumption and a bound $M$ on the values. In the neighborhood of a fixed point with $Q^*$ small, the bound $M$ is small, and the contraction condition is easier to satisfy. Globally, the cone assumption may not hold.
 
-**Conjecture 8.6.5 (Local contraction near equilibrium).** Let $Q^*$ be a fixed point of $T$ with $\operatorname{Im} Q^* \ge 0$. Then there exists a neighborhood $U$ of $Q^*$ in $(\mathcal{Q}, \|\cdot\|_\infty)$ on which $T$ is a contraction.
+**Conjecture 8.6.5 (Local contraction near equilibrium).** Let $Q^\*$ be a fixed point of $T$ with $\mathrm{Im} Q^\* \ge 0$. Then there exists a neighborhood $U$ of $Q^\*$ in $(\mathcal{Q}, \|\cdot\|_\infty)$ on which $T$ is a contraction.
 
-**Remark 8.6.6 (The path to a local theory).** Conjecture 8.6.5 is weaker than Conjecture 8.4.5 (global contraction) and may be more tractable. If true, it would give a local convergence result for value iteration near the fixed point, which is the regime of practical interest. The proof would likely proceed by showing that $Q_I \to 0$ near $Q^*$, so the phase cone shrinks, and the bound of Proposition 8.6.2 becomes effective with $M$ small.
+**Remark 8.6.6 (The path to a local theory).** Conjecture 8.6.5 is weaker than Conjecture 8.4.5 (global contraction) and may be more tractable. If true, it would give a local convergence result for value iteration near the fixed point, which is the regime of practical interest. The proof would likely proceed by showing that $Q_I \to 0$ near $Q^\*$, so the phase cone shrinks, and the bound of Proposition 8.6.2 becomes effective with $M$ small.
 
 ## 8.7 Summary
 
