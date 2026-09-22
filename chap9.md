@@ -124,19 +124,25 @@ $$Q^{\*+}(b, a) - Q^{\*-}(b, a) = \lambda \left(C^+(b) - C^-(b)\right). \qquad \
 
 **Corollary 9.6.4 (Gap is action-independent).** The disequilibrium gap $\Delta Q^\*(b, a)$ does not depend on $a$. It is a function of $b$ alone.
 
-**Corollary 9.6.5 (Gap identity).** Let $\Theta(b') = Q^{*-}(b', a^+(b')) - Q^{*+}(b', a^-(b'))$ where $a^+(b') = \pi^+_{Q^{*-}}(b')$ and $a^-(b') = \pi^-_{Q^{*+}}(b')$. Then
-$$\Delta Q^*(b) = \lambda \, \mathbb{E}_{b'}[\Theta(b')].$$
+**Corollary 9.6.5 (Gap identity).** Let $\Theta(b') = Q^{\*-}(b', a^+(b')) - Q^{\*+}(b', a^-(b'))$ where $a^+(b') = \pi^+_{Q^{\*-}}(b')$ and $a^-(b') = \pi^-_{Q^{\*+}}(b')$. Then
+
+$$\Delta Q^\*(b) = \lambda \, \mathbb{E}_{b'}[\Theta(b')].$$
+
 Iterating:
-$$\Delta Q^*(b) = \sum_{k=0}^\infty \lambda^{k+1} \, \mathbb{E}[\Theta(B_{t+k+1}) \mid B_t = b].$$
+
+$$\Delta Q^\*(b) = \sum_{k=0}^\infty \lambda^{k+1} \, \mathbb{E}[\Theta(B_{t+k+1}) \mid B_t = b].$$
+
 The gap is the discounted sum of future cross-terms.
 
-*Proof.* Substitute the fixed-point equation for $\Delta Q^*$ at $b'$ back into the expression for $\Delta Q^*(b)$. $\square$
+*Proof.* Substitute the fixed-point equation for $\Delta Q^\*$ at $b'$ back into the expression for $\Delta Q^\*(b)$. $\square$
 
-**Remark 9.6.6 (The cross-term depends only on the utility).** Let $Z(b, a) = \mathbb{E}_{b'}[z(b, a, b')]$. At a fixed point, $Q^{*\pm}(b, a) = Z(b, a) + \lambda C^\pm(b)$, so
+**Remark 9.6.6 (The cross-term depends only on the utility).** Let $Z(b, a) = \mathbb{E}_{b'}[z(b, a, b')]$. At a fixed point, $Q^{\*\pm}(b, a) = Z(b, a) + \lambda C^\pm(b)$, so
+
 $$\Theta(b') = Z(b', a^+(b')) - Z(b', a^-(b')).$$
+
 The cross-term depends only on the utility $Z$ and the two selectors, not on the value functions themselves. This is a key structural simplification.
 
-**Conjecture 9.6.7 (Gap-vanishing).** At any fixed point of the two-selector operator, $\Delta Q^* = 0$.
+**Conjecture 9.6.7 (Gap-vanishing).** At any fixed point of the two-selector operator, $\Delta Q^\* = 0$.
 
 **Remark 9.6.8 (Status of the conjecture).** The conjecture is supported by extensive but non-exhaustive hand-computed examples. No proof and no counterexample are known. The gap identity (Corollary 9.6.5) reduces the conjecture to the question of whether the cross-terms $\Theta(b')$ can be non-zero in a way that survives the discounted sum.
 
