@@ -179,7 +179,7 @@ $$\alpha_\gamma(b) = \limsup_{b' \to_{\tau_{\text{avg}}} b} \frac{|d_\gamma(b, b
 
 **Definition 5.6.3 (Locally symmetric point).** $b$ is *locally symmetric* if $\alpha_\gamma(b) = 0$. The set of locally symmetric points is denoted $\mathrm{Sym}_\gamma(\mathcal{B})$.
 
-**Proposition 5.6.4 (Symmetry points are closed).** $\mathrm{Sym}_\gamma(\mathcal{B})$ is closed in $\tau_{\text{avg}}$.
+**Proposition 5.6.4 (Symmetry points are closed).** $Sym_\gamma(\mathcal{B})$ is closed in $\tau_{\text{avg}}$.
 
 *Proof.* The map $(b, b') \mapsto |d_\gamma(b, b') - d_\gamma(b', b)| / d_{\text{avg}}(b, b')$ is continuous on $\{(b, b') : b \neq b'\}$ with respect to the product topology on $\mathcal{B} \times \mathcal{B}$ minus the diagonal. The set where the $\limsup$ vanishes is closed. $\square$
 
@@ -191,13 +191,13 @@ $$\alpha_\gamma(b) = \limsup_{b' \to_{\tau_{\text{avg}}} b} \frac{|d_\gamma(b, b
 
 ## 5.7 Fixed points in the bitopological structure
 
-**Definition 5.7.1 (Fixed point).** A state $b^* \in \mathcal{B}$ is a *fixed point* of the system if $Q(b^*, b^*) = 0$ and, for all $b' \in \mathcal{B}$,
-$$\lim_{b \to b^*} Q(b, b') = Q(b^*, b') \quad \text{and} \quad \lim_{b \to b^*} Q(b', b) = Q(b', b^*),$$
+**Definition 5.7.1 (Fixed point).** A state $b^\* \in \mathcal{B}$ is a *fixed point* of the system if $Q(b^\*, b^\*) = 0$ and, for all $b' \in \mathcal{B}$,
+$$\lim_{b \to b^\*} Q(b, b') = Q(b^\*, b') \quad \text{and} \quad \lim_{b \to b^\*} Q(b', b) = Q(b', b^\*),$$
 both limits taken in $\tau_{\text{avg}}$.
 
-**Proposition 5.7.2 (Fixed points are in all equilibrium sets).** If $b^*$ is a fixed point, then $b^* \in E_\vee \cap E_{\text{avg}} \cap E_\wedge \cap E_\rightarrow \cap E_\leftarrow$.
+**Proposition 5.7.2 (Fixed points are in all equilibrium sets).** If $b^\*$ is a fixed point, then $b^* \in E_\vee \cap E_{\text{avg}} \cap E_\wedge \cap E_\rightarrow \cap E_\leftarrow$.
 
-*Proof.* At a fixed point, all $d_\gamma$-balls of positive radius contain $b^*$, so $b^*$ is in the closure of $U_{\text{pre}}$ in every topology. $\square$
+*Proof.* At a fixed point, all $d_\gamma$-balls of positive radius contain $b^\*$, so $b^\*$ is in the closure of $U_{\text{pre}}$ in every topology. $\square$
 
 **Remark 5.7.3 (The converses are open).** Proposition 5.7.2 is the trivial inclusion: fixed points are equilibrium points. The interesting questions are the converses: when is an equilibrium point a fixed point? When does $E_\vee = E_{\text{avg}} = E_\wedge$? These are open and are addressed in Part IV and Part V.
 
@@ -213,7 +213,7 @@ $$E_\vee \subseteq E_{\text{avg}} \subseteq E_\wedge, \qquad E_\vee \subseteq E_
 
 The join topology gives the strictest equilibrium condition (smallest set); the meet topology gives the weakest (largest set). The direction of inclusions is the reverse of what a naïve reading might suggest, because finer topologies give smaller closures.
 
-**Local asymmetry (Proposition 5.6.2):** bounded by $2$ and vanishes at locally symmetric points. The set $\operatorname{Sym}_\gamma(\mathcal{B})$ is closed in $\tau_{\text{avg}}$ and contains all globally symmetric points.
+**Local asymmetry (Proposition 5.6.2):** bounded by $2$ and vanishes at locally symmetric points. The set $Sym_\gamma(\mathcal{B})$ is closed in $\tau_{\text{avg}}$ and contains all globally symmetric points.
 
 **Fixed points (Proposition 5.7.2):** every fixed point is in every equilibrium set. The converses are open.
 
