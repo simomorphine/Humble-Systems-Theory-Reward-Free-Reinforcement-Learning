@@ -26,7 +26,7 @@ for all $(b, a)$ and all policies.
 
 **Definition 6.2.2 (Bounded potential).** $\phi$ is *bounded* if $\sup_{b} |\phi(b)| < \infty$.
 
-**Definition 6.2.3 (Lipschitz potential).** $\phi$ is *$L$-Lipschitz* with respect to $d_{\text{avg}}$ if
+**Definition 6.2.3 (Lipschitz potential).** $\phi$ is $L$-*Lipschitz* with respect to $d_{\text{avg}}$ if
 $$|\phi(b) - \phi(b')| \le L \, d_{\text{avg}}(b, b')$$
 for all $b, b'$.
 
@@ -43,11 +43,11 @@ for all $(b, a)$.
 
 **Remark 6.2.6 (The bound is conservative).** The bound $2M/(1-\lambda)$ is the same as the bound on $Q_R^\pi$ when $c$ is bounded by $M$. It is conservative in the sense that it is the worst case; in practice the imaginary part may be much smaller.
 
-**Definition 6.2.7 (Phase constraint).** A fixed point $Q^*$ satisfies the *phase constraint* if $\operatorname{Arg} Q^*(b, a) \in [0, \pi/2]$ for all $(b, a)$.
+**Definition 6.2.7 (Phase constraint).** A fixed point $Q^\*$ satisfies the *phase constraint* if $\mathrm{Arg} Q^\*(b, a) \in [0, \pi/2]$ for all $(b, a)$.
 
-**Proposition 6.2.8 (Submartingale implies phase constraint).** Under the submartingale condition, every fixed point $Q^*$ satisfies the phase constraint.
+**Proposition 6.2.8 (Submartingale implies phase constraint).** Under the submartingale condition, every fixed point $Q^\*$ satisfies the phase constraint.
 
-*Proof.* $Q_I^*(b, a) \ge 0$ by Proposition 3.2.2. Since $c \ge 0$, the real part $Q_R^*$ is also non-negative (as the discounted cumulative cost of non-negative costs). Hence $\operatorname{Arg} Q^* \in [0, \pi/2]$. $\square$
+*Proof.* $Q_I^\*(b, a) \ge 0$ by Proposition 3.2.2. Since $c \ge 0$, the real part $Q_R^\*$ is also non-negative (as the discounted cumulative cost of non-negative costs). Hence $\mathrm{Arg} Q^* \in [0, \pi/2]$. $\square$
 
 ## 6.3 Closure properties of equilibrium sets
 
