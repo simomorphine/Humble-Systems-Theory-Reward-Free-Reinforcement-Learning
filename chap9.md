@@ -69,7 +69,31 @@ The natural question is whether $T_{\rightarrow\leftarrow}$ is a contraction. Th
 
 $$(T^+ Q_1^-)(b, a) - (T^+ Q_2^-)(b, a) = \lambda \, \mathbb{E}_{b'}\left[Q_1^-(b', \pi^+_{Q_1^-}(b')) - Q_2^-(b', \pi^+_{Q_2^-}(b'))\right].$$
 
-The selector $\pi^+_{Q^-}$ depends on $Q^-$ itself, so the two terms in the difference are evaluated at *different* actions $a_1 = \pi^+_{Q_1^-}(b')$ and $a_2 = \pi^+_{Q_2^-}(b')$. The triangle-inequality bound gives
+The selector
+
+$$
+\pi^+_{Q^-}
+$$
+
+depends on
+
+$$
+Q^-
+$$
+
+itself, so the two terms in the difference are evaluated at *different* actions
+
+$$
+a_1 = \pi^+_{Q_1^-}(b')
+$$
+
+and
+
+$$
+a_2 = \pi^+_{Q_2^-}(b').
+$$
+
+The triangle-inequality bound gives
 
 $$|Q_1^-(b', a_1) - Q_2^-(b', a_2)| \le \|Q_1^- - Q_2^-\|_\infty + |Q_2^-(b', a_1)| + |Q_2^-(b', a_2)|,$$
 
