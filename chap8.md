@@ -5,16 +5,21 @@
 ## 8.1 The optimality problem
 
 **Definition 8.1.1 (Modulus-greedy policy).** Given $Q \in \mathcal{Q}$, define the *modulus-greedy policy* $\pi_Q : \mathcal{B} \to \mathcal{A}$ by
+
 $$\pi_Q(b) = \arg\min_{a \in \mathcal{A}} |Q(b, a)|,$$
+
 with ties broken by a fixed deterministic rule (e.g. the smallest action index).
 
 **Definition 8.1.2 (Bellman optimality operator).** The *Bellman optimality operator* $T : \mathcal{Q} \to \mathcal{Q}$ is
+
 $$(TQ)(b, a) = \mathbb{E}_{b' \sim p(\cdot \mid b, a)}\left[z(b, a, b') + \lambda \, Q(b', \pi_Q(b'))\right].$$
 
 **Remark 8.1.3 (Nonlinearity).** The operator $T$ differs from the evaluation operator $T^\pi$ in that the policy at the next state is not fixed; it is chosen by the modulus-greedy rule applied to $Q$. This introduces a nonlinear dependence of the operator on its argument, and the dependence involves only the *magnitudes* of $Q(b, \cdot)$, not the arguments. This is the source of the optimality gap.
 
 **Problem 8.1.4 (OP1).** Is $T$ a $\lambda$-contraction on $(\mathcal{Q}, \|\cdot\|_\infty)$? Equivalently, does there exist $\kappa < 1$ such that
+
 $$\|TQ_1 - TQ_2\|_\infty \le \kappa \, \|Q_1 - Q_2\|_\infty$$
+
 for all $Q_1, Q_2 \in \mathcal{Q}$?
 
 **Remark 8.1.5 (Status of OP1).** The problem is open. No proof and no counterexample are known. This chapter presents the obstruction, the partial results that are available, and the structural facts about the fixed point that may lead to a resolution.
@@ -22,20 +27,27 @@ for all $Q_1, Q_2 \in \mathcal{Q}$?
 ## 8.2 Why the naive proof fails
 
 The classical proof of the optimality contraction uses the inequality
+
 $$\left| \max_a f(a) - \max_a g(a) \right| \le \max_a |f(a) - g(a)|,$$
+
 which holds for real-valued functions. The analogous inequality holds for $\min$ in place of $\max$.
 
 In the complex case, the selector is $\arg\min_a |Q(b, a)|$. The analogous inequality for the *moduli* is
+
 $$\left| \min_a |f(a)| - \min_a |g(a)| \right| \le \max_a \left| |f(a)| - |g(a)| \right| \le \max_a |f(a) - g(a)|.$$
+
 Both inequalities hold (the first is the scalar case applied to $|f|$ and $|g|$; the second is the reverse triangle inequality).
 
 What fails is the next step. Having bounded the difference between the *moduli* of the selected values, we need to bound the difference between the *selected complex values* themselves, and the moduli bound does not control the arguments.
 
 **Proposition 8.2.1 (Argument discrepancy).** For any $Q_1, Q_2 \in \mathcal{Q}$ and any $b'$, let $a_1 = \pi_{Q_1}(b')$ and $a_2 = \pi_{Q_2}(b')$. Then
+
 $$|Q_1(b', a_1) - Q_2(b', a_2)| \le \|Q_1 - Q_2\|_\infty + |Q_2(b', a_1)| + |Q_2(b', a_2)|.$$
 
 *Proof.* By the triangle inequality,
+
 $$|Q_1(b', a_1) - Q_2(b', a_2)| \le |Q_1(b', a_1) - Q_2(b', a_1)| + |Q_2(b', a_1) - Q_2(b', a_2)|.$$
+
 The first term is at most $\|Q_1 - Q_2\|_\infty$. The second is at most $|Q_2(b', a_1)| + |Q_2(b', a_2)|$. $\square$
 
 **Remark 8.2.2 (The obstruction).** The bound in Proposition 8.2.1 involves $|Q_2(b', a_1)|$ and $|Q_2(b', a_2)|$, which are bounded by $\|Q_2\|_\infty$, not by $\|Q_1 - Q_2\|_\infty$. As $Q_1 \to Q_2$, the cross-term does not vanish unless $Q_2(b', a_1)$ and $Q_2(b', a_2)$ both vanish. This is the obstruction.
@@ -59,16 +71,21 @@ The obstruction has three distinguishable aspects, each of which can be seen ind
 ## 8.4 The status of the counterexample question
 
 **Proposition 8.4.1 (Restricted positive result).** Define the *scalar modulus operator* $\hat{T} : \mathcal{B}(\mathcal{B}, \mathbb{R}_{\ge 0}) \to \mathcal{B}(\mathcal{B}, \mathbb{R}_{\ge 0})$ by
+
 $$(\hat{T}V)(b) = \min_{a \in \mathcal{A}} \mathbb{E}_{b' \sim p(\cdot \mid b, a)}\left[|z(b, a, b')| + \lambda \, V(b')\right].$$
+
 Then $\hat{T}$ is a $\lambda$-contraction on $(\mathcal{B}(\mathcal{B}, \mathbb{R}_{\ge 0}), \|\cdot\|_\infty)$ with a unique fixed point $V^\dagger$, and value iteration converges at rate $\lambda^n$.
 
 *Proof.* For $V_1, V_2$:
+
 $$|(\hat{T}V_1)(b) - (\hat{T}V_2)(b)| \le \max_a \left|\mathbb{E}_{b'}\left[\lambda V_1(b') - \lambda V_2(b')\right]\right| \le \lambda \, \|V_1 - V_2\|_\infty.$$
+
 The first inequality is the scalar case applied to the real-valued functions $f(a) = \mathbb{E}[|z| + \lambda V_1]$ and $g(a) = \mathbb{E}[|z| + \lambda V_2]$; the second is the modulus of expectation. $\square$
 
 **Remark 8.4.2 (What the scalar modulus operator computes).** The operator $\hat{T}$ computes the *modulus* of the optimal value function. It does not compute the complex value itself, and it does not recover the phase. The framework's optimality problem is therefore only partially resolved by $\hat{T}$: the magnitude is tractable, the phase is not.
 
 **Problem 8.4.3 (Counterexample).** Does there exist a cMDP, a discount $\lambda \in (0, 1)$, and two functions $Q_1, Q_2 \in \mathcal{Q}$ such that
+
 $$\|TQ_1 - TQ_2\|_\infty > \lambda \, \|Q_1 - Q_2\|_\infty?$$
 
 **Remark 8.4.4 (Status of the counterexample problem).** Open. Attempts to construct a counterexample have been unsuccessful, and attempts to prove contraction have also been unsuccessful. The naive proof fails (Proposition 8.2.1), but no failure of the operator itself has been exhibited.
@@ -84,7 +101,8 @@ $$\|TQ_1 - TQ_2\|_\infty > \lambda \, \|Q_1 - Q_2\|_\infty?$$
 Despite the uncertainty about contraction, the fixed point (if it exists) has a constrained location.
 
 **Proposition 8.5.1 (Non-negative imaginary part at the fixed point).** If $Q^* \in \mathcal{Q}$ satisfies $TQ^* = Q^*$ and the potential $\phi$ satisfies the submartingale condition, then
-$$\operatorname{Im} Q^*(b, a) \ge 0 \qquad \text{for all } (b, a).$$
+
+$$\mathrm{Im} Q^*(b, a) \ge 0 \qquad \text{for all } (b, a).$$
 
 *Proof.* The imaginary part of the fixed point satisfies the evaluation equation for the policy $\pi_{Q^*}$:
 $$Q_I^*(b, a) = \mathbb{E}_{b'}[d(b, a, b') + \lambda \, Q_I^*(b', \pi_{Q^*}(b'))].$$
