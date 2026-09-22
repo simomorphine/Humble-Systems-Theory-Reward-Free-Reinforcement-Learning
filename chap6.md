@@ -76,7 +76,7 @@ $$E_\vee \subseteq E_{\text{avg}} \subseteq E_\wedge.$$
 
 **Definition 6.4.1 (Locally symmetric point).** $b \in \mathcal{B}$ is *locally symmetric* if
 $$\liminf_{b' \to_{\tau_{\text{avg}}} b} \frac{|d_\gamma(b, b') - d_\gamma(b', b)|}{d_{\text{avg}}(b, b')} = 0.$$
-The set of all locally symmetric points is $\operatorname{Sym}_\gamma(\mathcal{B})$.
+The set of all locally symmetric points is $\mathrm{Sym}_\gamma(\mathcal{B})$.
 
 **Proposition 6.4.2 (Locally symmetric points are in $E_{\text{avg}}$).** If $b \in Sym_\gamma(\mathcal{B})$ and $b$ is a fixed point, then $b \in E_{\text{avg}}$.
 
