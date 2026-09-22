@@ -245,7 +245,7 @@ This chapter establishes the framework's distinctive geometry: the bitopological
 
 **Exercise 5.12 (Discussion).** The framework treats asymmetry as the generic case and symmetry as the special case. Is this reasonable? Give an example of a system where asymmetry is the natural state, and one where symmetry is the natural state.
 
-**Exercise 5.13.** Prove that the set $\operatorname{Sym}_\gamma(\mathcal{B})$ contains all isolated points of $\mathcal{B}$ (under $\tau_{\text{avg}}$).
+**Exercise 5.13.** Prove that the set $Sym_\gamma(\mathcal{B})$ contains all isolated points of $\mathcal{B}$ (under $\tau_{\text{avg}}$).
 
 **Exercise 5.14.** Show that in the symmetric case, the equilibrium hierarchy collapses: $E_\vee = E_{\text{avg}} = E_\wedge = E_\rightarrow = E_\leftarrow$.
 
