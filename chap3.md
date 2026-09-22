@@ -1,6 +1,5 @@
 # Chapter 3 — The Potential-Difference Form and Its Consequences
 
-*(Revised with exercises)*
 
 ## 3.1 The telescoping identity
 
