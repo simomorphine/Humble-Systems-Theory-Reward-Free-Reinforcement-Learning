@@ -13,15 +13,15 @@ of the form
 $$Q(b, b') = c(b, b') + i\, d(b, b'),$$
 where $c : \mathcal{B} \times \mathcal{B} \to \mathbb{R}_{\ge 0}$ is a *real cost* and $d : \mathcal{B} \times \mathcal{B} \to \mathbb{R}$ is a *real debt*.
 
-**Remark 2.1.5 (Asymmetry is permitted).** Symmetry is not required. In general $Q(b, b') \neq Q(b', b)$, and both the modulus and the argument may differ. The asymmetry is the central structural feature of the framework (Chapter 5).
+**Remark 2.1.4 (Asymmetry is permitted).** Symmetry is not required. In general $Q(b, b') \neq Q(b', b)$, and both the modulus and the argument may differ. The asymmetry is the central structural feature of the framework (Chapter 5).
 
-**Remark 2.1.6 (The triangle inequality is for the modulus).** Condition (Q3) is the triangle inequality for the modulus $|Q|$. It is weaker than the triangle inequality for the complex-valued function $Q$ itself, which would require $Q(b, b'') = Q(b, b') + Q(b', b'')$ and is not generally true. Throughout the book, "triangle inequality" refers to (Q3) unless stated otherwise.
+**Remark 2.1.5 (The triangle inequality is for the modulus).** Condition (Q3) is the triangle inequality for the modulus $|Q|$. It is weaker than the triangle inequality for the complex-valued function $Q$ itself, which would require $Q(b, b'') = Q(b, b') + Q(b', b'')$ and is not generally true. Throughout the book, "triangle inequality" refers to (Q3) unless stated otherwise.
 
-**Proposition 2.1.7.** The modulus $|Q|$ is a quasi-metric in the classical sense: it satisfies identity, non-negativity, and the triangle inequality. If $Q$ is symmetric ($Q(b, b') = Q(b', b)$ for all $b, b'$), then $|Q|$ is a metric, provided $|Q(b, b')| = 0$ implies $b = b'$.
+**Proposition 2.1.6.** The modulus $|Q|$ is a quasi-metric in the classical sense: it satisfies identity, non-negativity, and the triangle inequality. If $Q$ is symmetric ($Q(b, b') = Q(b', b)$ for all $b, b'$), then $|Q|$ is a metric, provided $|Q(b, b')| = 0$ implies $b = b'$.
 
 *Proof.* Identity: $|Q(b, b)| = |0| = 0$. Non-negativity: $|Q(b, b')| \ge 0$. Triangle inequality: (Q3). The symmetry statement is immediate. $\square$
 
-**Remark 2.1.8.** The modulus $|Q|$ loses the argument of $Q$. Two transitions with the same modulus but different arguments are indistinguishable at the level of $|Q|$. This loss is a recurring theme: it is the source of the optimality obstruction in Chapter 8, and it motivates the two-selector formulation of Chapter 9.
+**Remark 2.1.7.** The modulus $|Q|$ loses the argument of $Q$. Two transitions with the same modulus but different arguments are indistinguishable at the level of $|Q|$. This loss is a recurring theme: it is the source of the optimality obstruction in Chapter 8, and it motivates the two-selector formulation of Chapter 9.
 
 ## 2.2 The potential-difference form
 
