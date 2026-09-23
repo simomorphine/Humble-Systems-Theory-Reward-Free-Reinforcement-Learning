@@ -139,9 +139,9 @@ $$\mathcal{L}(b, a) \le \epsilon^2 + 2\lambda \epsilon M + \lambda^2 \mathcal{L}
 
 *Proof.* Banach fixed-point theorem. $\square$
 
-**Proposition 12.6.3 (Modulus of iterates).** Under contraction, $|Q_n(b, a)| \to |Q^*(b, a)|$ for every $(b, a)$.
+**Proposition 12.6.3 (Modulus of iterates).** Under contraction, $|Q_n(b, a)| \to |Q^\*(b, a)|$ for every $(b, a)$.
 
-*Proof.* $|\,|Q_n(b, a)| - |Q^*(b, a)|\,| \le |Q_n(b, a) - Q^*(b, a)| \le \|Q_n - Q^*\|_\infty \to 0$. $\square$
+*Proof.* $|\,|Q_n(b, a)| - |Q^\*(b, a)|\,| \le |Q_n(b, a) - Q^\*(b, a)| \le \|Q_n - Q^\*\|_\infty \to 0$. $\square$
 
 **Remark 12.6.4 (Modulus convergence is weaker than value convergence).** The convergence of the modulus does not imply convergence of the complex value. Two sequences with the same modulus but different arguments are indistinguishable at the level of $|Q_n|$. This is the same phase loss that appears in the optimality obstruction of Chapter 8.
 
@@ -151,7 +151,7 @@ $$\mathcal{L}(b, a) \le \epsilon^2 + 2\lambda \epsilon M + \lambda^2 \mathcal{L}
 
 The Lyapunov analysis in terms of the modulus loses phase information. A finer analysis tracks the phase of $Q_n$.
 
-**Definition 12.7.1 (Phase).** The *phase* of $Q_n(b, a)$ is $\theta_n(b, a) = \operatorname{Arg}(Q_n(b, a)) \in (-\pi, \pi]$.
+**Definition 12.7.1 (Phase).** The *phase* of $Q_n(b, a)$ is $\theta_n(b, a) = \mathrm{Arg}(Q_n(b, a)) \in (-\pi, \pi]$.
 
 **Proposition 12.7.2 (Phase equation).** If $T$ were a contraction on the phase, the phase would satisfy a Bellman-like equation. In general, the phase evolves discontinuously when the modulus-greedy selector switches.
 
@@ -160,20 +160,22 @@ The Lyapunov analysis in terms of the modulus loses phase information. A finer a
 **Remark 12.7.3 (Phase dynamics are the source of the optimality obstruction).** The modulus decreases smoothly, but the phase can jump, and the jumps are what defeat the naive contraction proof (Chapter 8).
 
 **Conjecture 12.7.4 (Phase convergence under submartingale).** Under the submartingale condition on the potential, the phase of the optimal value function converges to zero:
-$$\operatorname{Arg} Q^*(b, a) \to 0 \quad \text{as the system approaches equilibrium.}$$
+
+$$\mathrm{Arg} Q^\*(b, a) \to 0 \quad \text{as the system approaches equilibrium.}$$
 
 **Remark 12.7.5 (Motivation for the conjecture).** The conjecture is motivated by Corollary 8.5.3 (the fixed point is in the first quadrant) and by the heuristic that at equilibrium, the imaginary component vanishes. If the phase converges to zero, then the phase cone of Chapter 8 shrinks, and the local contraction conjecture (Conjecture 8.6.5) becomes plausible.
 
 ## 12.8 The Lyapunov function and the exploration-exploitation transition
 
 **Proposition 12.8.1 (Decomposition of the Lyapunov function).** $\mathcal{L}(b, a) = \mathcal{L}_R(b, a) + \mathcal{L}_I(b, a)$ where
-$$\mathcal{L}_R(b, a) = Q_R^*(b, a)^2, \qquad \mathcal{L}_I(b, a) = Q_I^*(b, a)^2.$$
 
-*Proof.* $|Q^*|^2 = Q_R^{*2} + Q_I^{*2}$. $\square$
+$$\mathcal{L}_R(b, a) = Q_R^\*(b, a)^2, \qquad \mathcal{L}_I(b, a) = Q_I^\*(b, a)^2.$$
+
+*Proof.* $|Q^\*|^2 = Q_R^{\*2} + Q_I^{\*2}$. $\square$
 
 **Proposition 12.8.2 (Imaginary component vanishes at equilibrium).** Under the HST Equilibrium Axiom (Chapter 13), $\mathcal{L}_I(b, a) \to 0$ for all $(b, a)$.
 
-*Proof.* The axiom states $Q_I^*(b, a) \to 0$. $\square$
+*Proof.* The axiom states $Q_I^\*(b, a) \to 0$. $\square$
 
 **Proposition 12.8.3 (Exploration signal bounded by $\mathcal{L}_I$).** The exploration signal $\mathcal{E}(b)$ of Chapter 10 is bounded by $4 \sup_a \mathcal{L}_I(b, a)$.
 
