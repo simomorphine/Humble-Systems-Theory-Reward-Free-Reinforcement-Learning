@@ -254,7 +254,7 @@ The chapter is honest that the two-selector formulation, as originally proposed,
 
 **Exercise 9.2.** Compute $T_{\rightarrow\leftarrow}(Q^+, Q^-)$ for a specific pair $(Q^+, Q^-)$ in the cMDP of Exercise 9.1. Verify that the result is in $\mathcal{Q} \times \mathcal{Q}$.
 
-**Exercise 9.3.** Verify Proposition 9.3.3 (well-definedness) for the cMDP of Exercise 9.1. Compute the bound $Z_{\max} + \lambda \max(\|Q^+\|_\infty, \|Q^-\|_\infty)$.
+**Exercise 9.3.** Verify Proposition 9.3.3 (well-definedness) for the cMDP of Exercise 9.1. Compute the bound $Z_{\max} + \lambda \max(\mid Q^+\mid_\infty, \mid Q^-\mid_\infty)$.
 
 **Exercise 9.4.** For the same cMDP, compute the gap $\Delta Q = Q^+ - Q^-$ and verify Corollary 9.6.4 (gap is action-independent at a fixed point).
 
@@ -270,7 +270,7 @@ The chapter is honest that the two-selector formulation, as originally proposed,
 
 **Exercise 9.10.** Verify Proposition 9.7.8 for a specific cMDP with a phase-cone restriction. Identify the cone $\mathcal{Q}_\theta$ and verify the contraction.
 
-**Exercise 9.11.** Show that at a single-selector fixed point, the two-selector operator has a fixed point $(Q^*, Q^*)$ (Proposition 9.9.2).
+**Exercise 9.11.** Show that at a single-selector fixed point, the two-selector operator has a fixed point $(Q^\*, Q^\*)$ (Proposition 9.9.2).
 
 **Exercise 9.12.** For a cMDP where the potential is a submartingale, verify that the fixed point of $T_{\rightarrow\leftarrow}$ (if it exists) lies in the first quadrant. Does the gap-vanishing conjecture hold for this cMDP?
 
