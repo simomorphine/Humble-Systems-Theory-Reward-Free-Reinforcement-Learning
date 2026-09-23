@@ -7,11 +7,15 @@
 The framework developed in Chapters 1–14 has been presented as a theory of *cost* — a system that pays an energetic price and an epistemic price, and that minimizes the modulus of their complex combination. Reward, in this presentation, has been either absent or reduced to a subtraction from cost. This chapter makes the two regimes explicit and develops them separately.
 
 **Regime A (Cost geometry, reward-free).** The agent minimizes a complex cost
+
 $$z = c + i\,d,$$
+
 with $c \ge 0$ an energetic cost and $d = \phi(b') - \phi(b)$ an epistemic debt. There is no reward signal. The agent's objective is to reduce its total burden.
 
 **Regime B (Cost–reward geometry).** The agent combines a cost with a reward signal $r$, encoding the net burden as
+
 $$z = \max(0, c - r) + i\,d.$$
+
 The real part is the *net cost after reward*, clipped at zero; the imaginary part remains the epistemic debt.
 
 The two regimes are not competitors. They describe different classes of systems:
@@ -26,7 +30,9 @@ The framework is honest about the relationship. Regime A is the framework's core
 ### 15.2.1 The objective
 
 The agent minimizes the complex cost $z = c + i\,d$ along the trajectory. The objective is
+
 $$\eta(\theta) = \mathbb{E}^{\pi_\theta}\left[\sum_{k=0}^\infty \lambda^k z(B_k, A_k, B_{k+1})\right] \in \mathbb{C},$$
+
 and the performance is $J(\theta) = |\eta(\theta)|^2$.
 
 There is no reward. The agent does not pursue anything; it reduces tension.
@@ -61,7 +67,9 @@ The policy gradient theorem (Chapter 10) applies in Regime A without modificatio
 ### 15.3.1 The objective
 
 In Regime B, a reward signal $r(b, a, b') \in \mathbb{R}$ is available. The agent encodes the net burden as
+
 $$z = \max(0, c - r) + i\,d,$$
+
 where $c$ is the energetic cost and $d$ is the epistemic debt.
 
 The real part $\max(0, c - r)$ is the *net cost after reward*. It is:
@@ -133,9 +141,9 @@ This is an important structural point. The framework is not "a reward-free RL me
 
 ### 15.4.3 Implications for the HST Equilibrium Axiom
 
-The HST Equilibrium Axiom (Chapter 13) states that every information processing system converges to epistemic equilibrium ($Q_I^* \to 0$). Does the axiom depend on the regime?
+The HST Equilibrium Axiom (Chapter 13) states that every information processing system converges to epistemic equilibrium ( $Q_I^\* \to 0$ ). Does the axiom depend on the regime?
 
-**Proposition 15.4.3 (Axiom is regime-independent).** The HST Equilibrium Axiom is stated in terms of the imaginary component of the value function. Since the imaginary component is unchanged between Regimes A and B (both have $d = \phi(b') - \phi(b)$), the axiom's statement is the same in both regimes.
+**Proposition 15.4.3 (Axiom is regime-independent).** The HST Equilibrium Axiom is stated in terms of the imaginary component of the value function. Since the imaginary component is unchanged between Regimes A and B (both have $d = \phi(b') - \phi(b)$ ), the axiom's statement is the same in both regimes.
 
 *Proof.* The imaginary Bellman equation is the same in both regimes (the hinge affects only the real part). Hence the imaginary component of the fixed point is the same. $\square$
 
