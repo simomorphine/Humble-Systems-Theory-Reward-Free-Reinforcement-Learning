@@ -140,7 +140,7 @@ The quarter-plane constraint suggests a refinement: if the arguments of the sele
 
 **Definition 8.6.1 (Phase cone).** For $\theta \in [0, \pi]$, the *phase cone* of half-width $\theta$ is
 
-$$C_\theta = \{w \in \mathbb{C} \setminus \{0\} : |\mathrm{Arg}(w)| \le \theta\} \cup \{0\}.$$
+$$C_\theta = \lbrace w \in \mathbb{C} \setminus \lbrace 0\rbrace : |\mathrm{Arg}(w)| \le \theta\rbrace \cup \lbrace 0\rbrace$$
 
 **Proposition 8.6.2 (Contraction on a phase cone).** Let $M > 0$ and suppose $Q_1, Q_2 \in \mathcal{Q}$ satisfy $Q_i(b, a) \in C_\theta \cap \overline{B(0, M)}$ for all $(b, a)$, $i = 1, 2$. Then
 
