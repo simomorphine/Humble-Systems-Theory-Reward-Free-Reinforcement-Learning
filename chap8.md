@@ -50,7 +50,7 @@ $$|Q_1(b', a_1) - Q_2(b', a_2)| \le |Q_1(b', a_1) - Q_2(b', a_1)| + |Q_2(b', a_1
 
 The first term is at most $\|Q_1 - Q_2\|_\infty$. The second is at most $|Q_2(b', a_1)| + |Q_2(b', a_2)|$. $\square$
 
-**Remark 8.2.2 (The obstruction).** The bound in Proposition 8.2.1 involves $|Q_2(b', a_1)|$ and $|Q_2(b', a_2)|$, which are bounded by $\|Q_2\|_\infty$, not by $\|Q_1 - Q_2\|_\infty$. As $Q_1 \to Q_2$, the cross-term does not vanish unless $Q_2(b', a_1)$ and $Q_2(b', a_2)$ both vanish. This is the obstruction.
+**Remark 8.2.2 (The obstruction).** The bound in Proposition 8.2.1 involves $|Q_2(b', a_1)|$ and $|Q_2(b', a_2)|$, which are bounded by $\mid Q_2\mid_\infty$, not by $\mid Q_1 - Q_2\mid_\infty$. As $Q_1 \to Q_2$, the cross-term does not vanish unless $Q_2(b', a_1)$ and $Q_2(b', a_2)$ both vanish. This is the obstruction.
 
 **Remark 8.2.3 (The bound is not tight in general).** The bound in Proposition 8.2.1 is the triangle-inequality bound and may be very loose. In practice, the selected values $Q_2(b', a_1)$ and $Q_2(b', a_2)$ are often close to each other, and the cross-term is small. The failure of the naive proof is a failure of the *proof technique*, not necessarily a failure of the operator. This is why the contraction question is open rather than resolved in the negative.
 
