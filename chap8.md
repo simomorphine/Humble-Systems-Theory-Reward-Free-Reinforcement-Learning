@@ -201,11 +201,11 @@ This chapter establishes the optimality problem and the gap that remains. The ne
 
 **Exercise 8.4.** Construct a cMDP and two functions $Q_1, Q_2 \in \mathcal{Q}$ such that the argument discrepancy bound (Proposition 8.2.1) is tight.
 
-**Exercise 8.5.** Verify Proposition 8.4.1 for a specific cMDP. Compute the fixed point $V^\dagger$ of $\hat{T}$ and compare it to $|Q^*|$ (if $Q^*$ exists).
+**Exercise 8.5.** Verify Proposition 8.4.1 for a specific cMDP. Compute the fixed point $V^\dagger$ of $\hat{T}$ and compare it to $|Q^\*|$ (if $Q^\*$ exists).
 
 **Exercise 8.6.** Prove that the scalar modulus operator $\hat{T}$ is a $\lambda$-contraction. (This is a specific case of the more general evaluation contraction; write out the proof.)
 
-**Exercise 8.7.** Construct a cMDP where the scalar modulus operator's fixed point $V^\dagger$ equals $|Q^*|$ for the fixed point $Q^*$ of the complex Bellman operator (if it exists). Is this always the case? If not, give a counterexample.
+**Exercise 8.7.** Construct a cMDP where the scalar modulus operator's fixed point $V^\dagger$ equals $|Q^\*|$ for the fixed point $Q^\*$ of the complex Bellman operator (if it exists). Is this always the case? If not, give a counterexample.
 
 **Exercise 8.8.** Verify Proposition 8.5.1 for a specific cMDP with a submartingale potential. Compute $Q_I^*$ and check that it is non-negative.
 
