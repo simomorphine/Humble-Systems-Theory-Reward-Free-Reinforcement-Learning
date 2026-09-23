@@ -185,7 +185,7 @@ $$\pi_\tau(a \mid b, Q) = \frac{\exp(-|Q(b, a)| / \tau)}{\sum_{a' \in \mathcal{A
 
 **Definition 9.7.7 (Phase-cone subspace).** For $\theta \in [0, \pi/2)$, the *phase-cone subspace* is
 
-$$\mathcal{Q}_\theta = \{Q \in \mathcal{Q} : Q(b, a) \in C_\theta \text{ for all } (b, a)\}.$$
+$$\mathcal{Q}_\theta = \lbrace Q \in \mathcal{Q} : Q(b, a) \in C_\theta \text{ for all } (b, a)\rbrace$$
 
 **Proposition 9.7.8 (Contraction on the phase-cone subspace).** On $\mathcal{Q}_\theta \cap \overline{B(0, M)}$ for sufficiently small $\theta$ and $M$, the Bellman optimality operator $T$ is a contraction.
 
