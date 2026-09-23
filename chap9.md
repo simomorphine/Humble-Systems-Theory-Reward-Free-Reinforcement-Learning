@@ -1,6 +1,6 @@
 # Chapter 9 — The Two-Selector Formulation
 
-*(Revised with exercises)*
+
 
 ## 9.1 Motivation
 
