@@ -1,6 +1,6 @@
 # Chapter 8 — The Optimality Operator and Its Gap
 
-*(Revised with exercises)*
+
 
 ## 8.1 The optimality problem
 
