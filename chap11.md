@@ -4,21 +4,25 @@
 
 # Chapter 11 — Fixed Points and Their Existence
 
-*(Revised with exercises)*
+
 
 ## 11.1 The fixed-point problem
 
 Parts II and III developed the geometry and the learning theory. This part studies the equilibrium structure: what fixed points exist, whether they are unique, and what their properties are.
 
-**Definition 11.1.1 (Fixed point of the complex Bellman operator).** A function $Q^* \in \mathcal{Q}$ is a *fixed point* of the Bellman optimality operator $T$ if
-$$TQ^* = Q^*,$$
+**Definition 11.1.1 (Fixed point of the complex Bellman operator).** A function $Q^\* \in \mathcal{Q}$ is a *fixed point* of the Bellman optimality operator $T$ if
+
+$$TQ^\* = Q^\*,$$
+
 i.e. if for all $(b, a)$,
-$$Q^*(b, a) = \mathbb{E}_{b' \sim p(\cdot \mid b, a)}\left[z(b, a, b') + \lambda \, Q^*(b', \pi_{Q^*}(b'))\right].$$
 
-**Definition 11.1.2 (Fixed point of the two-selector operator).** A pair $(Q^{*+}, Q^{*-}) \in \mathcal{Q} \times \mathcal{Q}$ is a *fixed point of $T_{\rightarrow\leftarrow}$* if
-$$T_{\rightarrow\leftarrow}(Q^{*+}, Q^{*-}) = (Q^{*+}, Q^{*-}).$$
+$$Q^\*(b, a) = \mathbb{E}_{b' \sim p(\cdot \mid b, a)}\left[z(b, a, b') + \lambda \, Q^\*(b', \pi_{Q^\*}(b'))\right].$$
 
-**Definition 11.1.3 (Epistemic equilibrium).** A pair $(Q^{*+}, Q^{*-})$ is in *epistemic equilibrium* if it is a fixed point of $T_{\rightarrow\leftarrow}$ and $Q^{*+} = Q^{*-}$.
+**Definition 11.1.2 (Fixed point of the two-selector operator).** A pair $(Q^{\*+}, Q^{\*-}) \in \mathcal{Q} \times \mathcal{Q}$ is a *fixed point of* $T_{\rightarrow\leftarrow}$ if
+
+$$T_{\rightarrow\leftarrow}(Q^{\*+}, Q^{\*-}) = (Q^{\*+}, Q^{\*-}).$$
+
+**Definition 11.1.3 (Epistemic equilibrium).** A pair $(Q^{\*+}, Q^{\*-})$ is in *epistemic equilibrium* if it is a fixed point of $T_{\rightarrow\leftarrow}$ and $Q^{\*+} = Q^{\*-}$.
 
 **Problem 11.1.4 (Existence).** Under what conditions does $T$ (or $T_{\rightarrow\leftarrow}$) have a fixed point in $\mathcal{Q}$ (or $\mathcal{Q} \times \mathcal{Q}$)?
 
@@ -56,15 +60,17 @@ If $T$ is not a contraction but is continuous on a compact convex set, existence
 
 *Proof.* Finite-dimensional complex Banach spaces are reflexive. $\square$
 
-**Proposition 11.3.3 (Continuity of $T$ on a finite cMDP).** If $\mathcal{B}$ and $\mathcal{A}$ are finite, then $T : \mathcal{Q} \to \mathcal{Q}$ is continuous in the norm topology away from the tie set $\mathcal{T} = \{Q : \exists b, a \neq a' \text{ with } |Q(b, a)| = |Q(b, a')|\}$, and its restriction to the complement of $\mathcal{T}$ is Lipschitz with constant $\lambda$.
+**Proposition 11.3.3 (Continuity of $T$ on a finite cMDP).** If $\mathcal{B}$ and $\mathcal{A}$ are finite, then $T : \mathcal{Q} \to \mathcal{Q}$ is continuous in the norm topology away from the tie set $\mathcal{T} = \lbrace Q : \exists b, a \neq a' \text{ with } |Q(b, a)| = |Q(b, a')|\rbrace$, and its restriction to the complement of $\mathcal{T}$ is Lipschitz with constant $\lambda$.
 
 *Proof.* On the complement of the tie set, the selector $\pi_Q$ is locally constant, so $T$ is locally an evaluation operator, which is $\lambda$-Lipschitz. $\square$
 
 **Theorem 11.3.4 (Existence for finite cMDPs).** If $\mathcal{B}$ and $\mathcal{A}$ are finite, then $T$ has at least one fixed point in $\mathcal{Q}$.
 
 *Proof.* Consider a smoothed version $T_\tau$ of $T$ obtained by replacing the hard selector with a soft selector of temperature $\tau > 0$:
+
 $$\pi_{\tau, Q}(a \mid b) = \frac{\exp(-|Q(b, a)| / \tau)}{\sum_{a' \in \mathcal{A}} \exp(-|Q(b, a')| / \tau)}.$$
-For each $\tau > 0$, $T_\tau$ is continuous on $\mathcal{Q}$ (as a composition of continuous maps) and maps a sufficiently large closed ball $\overline{B(0, R)}$ into itself, where $R = Z_{\max}/(1-\lambda)$. By Schauder's theorem, $T_\tau$ has a fixed point $Q_\tau^*$ in $\overline{B(0, R)}$. As $\tau \to 0$, the sequence $\{Q_\tau^*\}$ is bounded and hence has a convergent subsequence (by finite-dimensionality of $\mathcal{Q}$). Any limit point $Q^*$ of such a subsequence satisfies $TQ^* = Q^*$ by continuity of $T$ on the complement of the tie set and by the limiting behavior of the soft selector. $\square$
+
+For each $\tau > 0$, $T_\tau$ is continuous on $\mathcal{Q}$ (as a composition of continuous maps) and maps a sufficiently large closed ball $\overline{B(0, R)}$ into itself, where $R = Z_{\max}/(1-\lambda)$. By Schauder's theorem, $T_\tau$ has a fixed point $Q_\tau^\*$ in $\overline{B(0, R)}$. As $\tau \to 0$, the sequence $\lbrace Q_\tau^\*\rbrace$ is bounded and hence has a convergent subsequence (by finite-dimensionality of $\mathcal{Q}$). Any limit point $Q^\*$ of such a subsequence satisfies $TQ^\* = Q^\*$ by continuity of $T$ on the complement of the tie set and by the limiting behavior of the soft selector. $\square$
 
 **Remark 11.3.5 (Existence but not uniqueness).** Theorem 11.3.4 establishes existence but not uniqueness. The fixed-point set may be a singleton or a manifold. For finite cMDPs, the smoothed version $T_\tau$ has a unique fixed point for each $\tau > 0$ (by Banach, since $T_\tau$ is a contraction for suitable $\tau$). If the limit as $\tau \to 0$ is independent of the choice of subsequence, the fixed point of $T$ is unique. Whether the limit is subsequence-independent is not established.
 
@@ -84,7 +90,7 @@ For each $\tau > 0$, $T_\tau$ is continuous on $\mathcal{Q}$ (as a composition o
 
 **Remark 11.4.4 (Why uniqueness is hard).** The smoothed-operator argument (Theorem 11.3.4) gives existence but not uniqueness. If the limit as $\tau \to 0$ depends on the choice of subsequence, uniqueness fails. Whether the limit is subsequence-independent is not established. A proof of uniqueness would need either a contraction argument (which is OP1) or a monotonicity argument, neither of which is currently available.
 
-**Conjecture 11.4.5 (Uniqueness conjecture).** If $T$ has a fixed point $Q^*$ with $\operatorname{Re} Q^* \ge 0$ and $\operatorname{Im} Q^* \ge 0$ (first quadrant), then $Q^*$ is unique in $\mathcal{Q}$.
+**Conjecture 11.4.5 (Uniqueness conjecture).** If $T$ has a fixed point $Q^\*$ with $\mathrm{Re} Q^\* \ge 0$ and $\mathrm{Im} Q^\* \ge 0$ (first quadrant), then $Q^\*$ is unique in $\mathcal{Q}$.
 
 **Remark 11.4.6 (Motivation for the conjecture).** The first-quadrant restriction holds at any fixed point under the submartingale condition (Corollary 8.5.3). The conjecture is that this restriction, combined with the structure of the Bellman equation, forces uniqueness. The intuition is that the phase-loss obstruction (Chapter 8) is what allows multiple fixed points, and if the phase is constrained to the first quadrant, the obstruction weakens.
 
@@ -93,7 +99,8 @@ For each $\tau > 0$, $T_\tau$ is continuous on $\mathcal{Q}$ (as a composition o
 When the fixed point is not unique, its structure is of interest.
 
 **Definition 11.5.1 (Fixed-point set).** The *fixed-point set* of $T$ is
-$$\mathcal{F} = \{Q \in \mathcal{Q} : TQ = Q\}.$$
+
+$$\mathcal{F} = \lbrace Q \in \mathcal{Q} : TQ = Q\rbrace$$
 
 **Proposition 11.5.2 (Closedness).** If $T$ is continuous, then $\mathcal{F}$ is closed in $(\mathcal{Q}, \|\cdot\|_\infty)$.
 
