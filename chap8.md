@@ -221,10 +221,10 @@ This chapter establishes the optimality problem and the gap that remains. The ne
 
 **Exercise 8.14 (Discussion).** The scalar modulus operator computes the modulus of the optimal value, not the value itself. In what applications would this be sufficient? In what applications would the phase be essential?
 
-**Exercise 8.15 (Open).** Try to construct a counterexample to Conjecture 8.4.5: find a cMDP, a discount $\lambda \in (0,1)$, and two functions $Q_1, Q_2$ such that $\|TQ_1 - TQ_2\|_\infty > \lambda \|Q_1 - Q_2\|_\infty$. If you can't, try to prove the conjecture under additional hypotheses.
+**Exercise 8.15 (Open).** Try to construct a counterexample to Conjecture 8.4.5: find a cMDP, a discount $\lambda \in (0,1)$, and two functions $Q_1, Q_2$ such that $\mid TQ_1 - TQ_2\mid_\infty > \lambda \mid Q_1 - Q_2\mid_\infty$. If you can't, try to prove the conjecture under additional hypotheses.
 
 **Exercise 8.16 (Open).** The local contraction conjecture (8.6.5) is weaker than the global contraction conjecture (8.4.5). Prove the local version, or find a counterexample.
 
 **Exercise 8.17 (Open).** The phase-cone contraction (Proposition 8.6.2) requires $M \le \|Q_1 - Q_2\|_\infty$. Can this condition be relaxed? For instance, is the contraction valid if $M$ is merely bounded (not necessarily small)?
 
-**Exercise 8.18 (Open).** The fixed point $Q^*$ lies in the first quadrant under the submartingale condition. Does this constrain the phase cone of $Q^*$? Specifically, is the argument spread of $Q^*(b, \cdot)$ across actions bounded?
+**Exercise 8.18 (Open).** The fixed point $Q^\*$ lies in the first quadrant under the submartingale condition. Does this constrain the phase cone of $Q^\*$? Specifically, is the argument spread of $Q^\*(b, \cdot)$ across actions bounded?
