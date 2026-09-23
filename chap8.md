@@ -128,7 +128,7 @@ Since $c \ge 0$ and the expectation preserves non-negativity, iterating the Bell
 
 **Corollary 8.5.3 (First quadrant).** Under the conditions of Propositions 8.5.1 and 8.5.2, $Q^\*(b, a)$ lies in the first quadrant:
 
-$$Q^\*(b, a) \in \{w \in \mathbb{C} : \mathrm{Re}(w) \ge 0, \mathrm{Im}(w) \ge 0\}.$$
+$$Q^\*(b, a) \in \lbrace w \in \mathbb{C} : \mathrm{Re}(w) \ge 0, \mathrm{Im}(w) \ge 0\rbrace$$
 
 *Proof.* Combine the two propositions. $\square$
 
