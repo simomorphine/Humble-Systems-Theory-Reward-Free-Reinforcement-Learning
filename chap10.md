@@ -1,6 +1,6 @@
 # Chapter 10 — The Complex Policy Gradient Theorem
 
-*(Revised with exercises)*
+
 
 ## 10.1 Parameterized policies
 
