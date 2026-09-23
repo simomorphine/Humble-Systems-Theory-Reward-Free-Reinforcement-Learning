@@ -93,7 +93,9 @@ $$E_\vee = E_{\text{avg}} = E_\wedge = E_\rightarrow = E_\leftarrow.$$
 ## 6.5 Local structure of $E_\tau$
 
 **Definition 6.5.1 (Neighborhood of $E_\tau$).** For $b \in E_\tau$ and $\epsilon > 0$, the $\epsilon$-neighborhood of $E_\tau$ in $\tau$ is
-$$N_\tau(E_\tau, \epsilon) = \{b' \in \mathcal{B} : \exists b \in E_\tau, \, d_\tau(b, b') < \epsilon\},$$
+
+$$N_\tau(E_\tau, \epsilon) = \lbrace b' \in \mathcal{B} : \exists b \in E_\tau, \, d_\tau(b, b') < \epsilon\rbrace$$
+
 where $d_\tau$ is the metric generating $\tau$ (or, for the join and meet topologies, the appropriate quasi-metric).
 
 **Proposition 6.5.2 (Density of $U_{\text{pre}}$ in $E_\tau$).** $U_{\text{pre}}$ is dense in $E_\tau$ with respect to $\tau$.
