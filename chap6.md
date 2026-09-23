@@ -151,9 +151,9 @@ This completes Part II. The geometry of complex cost is now in place: the comple
 
 **Exercise 6.2.** Give an example of a system where $b^\*$ is a fixed point but not an absorbing state. (Hint: consider a cMDP where $b^\*$ has non-trivial outgoing transitions but the net cost of returning to $b^\*$ is zero.)
 
-**Exercise 6.3.** Prove that if $\phi$ is bounded with $|\phi| \le M$, then $Q_I^\pi(b, a) \le 2M$ (not $2M/(1-\lambda)$). Where does the extra factor of $1/(1-\lambda)$ come from in the discounted case?
+**Exercise 6.3.** Prove that if $\phi$ is bounded with $|\phi| \le M$, then $Q_I^\pi(b, a) \le 2M$ (not $2M/(1-\lambda)$ ). Where does the extra factor of $1/(1-\lambda)$ come from in the discounted case?
 
-**Exercise 6.4.** Verify Proposition 6.2.8 for a specific cMDP with a submartingale potential. Compute $Q^*$ and check that $\operatorname{Arg} Q^* \in [0, \pi/2]$.
+**Exercise 6.4.** Verify Proposition 6.2.8 for a specific cMDP with a submartingale potential. Compute $Q^\*$ and check that $\mathrm{Arg} Q^\* \in [0, \pi/2]$.
 
 **Exercise 6.5.** For $\mathcal{B} = \{b_1, b_2\}$ with $U_{\text{pre}} = B_{\text{avg}}(b_1, 1) \cup B_{\text{avg}}(b_2, 1)$, compute $E_\tau$ for each topology and verify the hierarchy. You may assume all balls are non-empty and the metric is discrete (each point is isolated).
 
