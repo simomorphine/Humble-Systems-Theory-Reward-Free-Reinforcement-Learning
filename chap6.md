@@ -147,9 +147,9 @@ This completes Part II. The geometry of complex cost is now in place: the comple
 
 ## Exercises
 
-**Exercise 6.1.** Verify that the fixed point condition $Q(b^*, b^*) = 0$ is equivalent to $c(b^*, b^*) = 0$ and $d(b^*, b^*) = 0$.
+**Exercise 6.1.** Verify that the fixed point condition $Q(b^\*, b^\*) = 0$ is equivalent to $c(b^\*, b^\*) = 0$ and $d(b^\*, b^\*) = 0$.
 
-**Exercise 6.2.** Give an example of a system where $b^*$ is a fixed point but not an absorbing state. (Hint: consider a cMDP where $b^*$ has non-trivial outgoing transitions but the net cost of returning to $b^*$ is zero.)
+**Exercise 6.2.** Give an example of a system where $b^\*$ is a fixed point but not an absorbing state. (Hint: consider a cMDP where $b^\*$ has non-trivial outgoing transitions but the net cost of returning to $b^\*$ is zero.)
 
 **Exercise 6.3.** Prove that if $\phi$ is bounded with $|\phi| \le M$, then $Q_I^\pi(b, a) \le 2M$ (not $2M/(1-\lambda)$). Where does the extra factor of $1/(1-\lambda)$ come from in the discounted case?
 
