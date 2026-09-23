@@ -1,15 +1,18 @@
 # Chapter 13 — The HST Equilibrium Axiom
 
-*(Revised with exercises)*
+
 
 ## 13.1 Statement of the axiom
 
 **Axiom 13.1.1 (HST Equilibrium Axiom).** Every information processing system evolves toward epistemic equilibrium. Formally, under the dynamics induced by the Bellman optimality operator $T$ (or the two-selector operator $T_{\rightarrow\leftarrow}$), the imaginary component of the value function converges to zero:
-$$\lim_{t \to \infty} Q_I^*(B_t, A_t) = 0 \quad \text{almost surely},$$
-and the phase of the value function converges to zero:
-$$\lim_{t \to \infty} \operatorname{Arg} Q^*(B_t, A_t) = 0 \quad \text{almost surely}.$$
 
-**Remark 13.1.2 (The two statements are equivalent).** Under the submartingale condition, $Q_I^* \ge 0$ and $Q_R^* \ge 0$ (Propositions 8.5.1 and 8.5.2), so $\operatorname{Arg} Q^* \in [0, \pi/2]$. The statement that $Q_I^* \to 0$ is then equivalent to the statement that $\operatorname{Arg} Q^* \to 0$ (given that $Q^*$ does not converge to zero in both components simultaneously, which would make the argument undefined). The axiom is stated in both forms for emphasis.
+$$\lim_{t \to \infty} Q_I^\*(B_t, A_t) = 0 \quad \text{almost surely},$$
+
+and the phase of the value function converges to zero:
+
+$$\lim_{t \to \infty} \mathrm{Arg} Q^\*(B_t, A_t) = 0 \quad \text{almost surely}.$$
+
+**Remark 13.1.2 (The two statements are equivalent).** Under the submartingale condition, $Q_I^\* \ge 0$ and $Q_R^\* \ge 0$ (Propositions 8.5.1 and 8.5.2), so $\mathrm{Arg} Q^\* \in [0, \pi/2]$. The statement that $Q_I^\* \to 0$ is then equivalent to the statement that $\mathrm{Arg} Q^\* \to 0$ (given that $Q^\*$ does not converge to zero in both components simultaneously, which would make the argument undefined). The axiom is stated in both forms for emphasis.
 
 **Remark 13.1.3 (The axiom is not a theorem).** The axiom is not derivable from the framework's other assumptions. It is a foundational claim about what information processing systems do. The framework's technical results — the evaluation contraction, the policy gradient theorem, the telescoping identity, the topological structure — do not depend on the axiom. The axiom is required only for the *interpretive* claims about learning and equilibrium.
 
@@ -29,24 +32,28 @@ The axiom is not derivable from the framework's other assumptions, for three rea
 
 Under the axiom, several results follow.
 
-**Proposition 13.3.1 (Vanishing epistemic component).** Under Axiom 13.1.1, the epistemic component $\mathcal{L}_I(b, a) = Q_I^*(b, a)^2$ of the Lyapunov candidate vanishes:
+**Proposition 13.3.1 (Vanishing epistemic component).** Under Axiom 13.1.1, the epistemic component $\mathcal{L}_I(b, a) = Q_I^\*(b, a)^2$ of the Lyapunov candidate vanishes:
+
 $$\mathcal{L}_I(b, a) \to 0 \quad \text{as } t \to \infty.$$
 
-*Proof.* $Q_I^* \to 0$ implies $Q_I^{*2} \to 0$. $\square$
+*Proof.* $Q_I^\* \to 0$ implies $Q_I^{\*2} \to 0$. $\square$
 
 **Proposition 13.3.2 (Vanishing exploration signal).** Under Axiom 13.1.1, the exploration signal $\mathcal{E}(b)$ defined in Chapter 10 vanishes.
 
 *Proof.* By Proposition 12.8.3, $\mathcal{E}(b) \le 4 \sup_a \mathcal{L}_I(b, a)$. Since $\mathcal{L}_I \to 0$, $\mathcal{E} \to 0$. $\square$
 
-**Proposition 13.3.3 (Real-valued limit).** Under Axiom 13.1.1, the limiting value function $Q_\infty^*(b, a) = \lim_{t \to \infty} Q_t^*(b, a)$ is real and non-negative:
-$$Q_\infty^*(b, a) \in \mathbb{R}_{\ge 0}.$$
+**Proposition 13.3.3 (Real-valued limit).** Under Axiom 13.1.1, the limiting value function $Q_\infty^\*(b, a) = \lim_{t \to \infty} Q_t^\*(b, a)$ is real and non-negative:
 
-*Proof.* $Q_I^* \to 0$ and $Q_R^* \ge 0$, so $Q^* \to |Q^*| \ge 0$. $\square$
+$$Q_\infty^\*(b, a) \in \mathbb{R}_{\ge 0}.$$
+
+*Proof.* $Q_I^\* \to 0$ and $Q_R^\* \ge 0$, so $Q^\* \to |Q^\*| \ge 0$. $\square$
 
 **Proposition 13.3.4 (Recovery of classical value).** In the limit, the complex framework reduces to the classical framework applied to the real cost $c$. The limiting optimal policy is the classical cost-minimizing policy.
 
 *Proof.* By Proposition 13.3.3, the limit is a non-negative real value function. The Bellman equation in the limit reduces to
-$$Q_\infty^*(b, a) = \mathbb{E}_{b'}[c(b, a, b') + \lambda Q_\infty^*(b', \pi_{Q_\infty^*}(b'))],$$
+
+$$Q_\infty^\*(b, a) = \mathbb{E}_{b'}[c(b, a, b') + \lambda Q_\infty^\*(b', \pi_{Q_\infty^\*}(b'))],$$
+
 which is the classical Bellman optimality equation for cost minimization. $\square$
 
 **Remark 13.3.5 (The complex structure is transient).** Under the axiom, the complex framework reduces, asymptotically, to the classical framework applied to the real cost. The imaginary component is transient; it vanishes at equilibrium; the asymptotic behavior is purely real. This is a strong consequence: the framework's distinctive geometric structure is a *transient* phenomenon, relevant during learning but not at the fixed point.
@@ -57,7 +64,7 @@ The axiom gives a formal account of the exploration-exploitation transition.
 
 **Proposition 13.4.1 (Automatic transition).** Under Axiom 13.1.1, the CNAC algorithm (Chapter 10) transitions from a two-channel update (cost and debt) to a single-channel update (cost only), without an external schedule.
 
-*Proof.* The debt channel is weighted by $\operatorname{Im}(\overline{\eta})$. By Proposition 13.3.3, $\operatorname{Im}(Q^*) \to 0$, hence $\operatorname{Im}(\overline{\eta}) \to 0$, and the debt channel vanishes. The cost channel remains active, driven by $\operatorname{Re}(\overline{\eta})$. $\square$
+*Proof.* The debt channel is weighted by $\mathrm{Im}(\overline{\eta})$. By Proposition 13.3.3, $\mathrm{Im}(Q^*) \to 0$, hence $\mathrm{Im}(\overline{\eta}) \to 0$, and the debt channel vanishes. The cost channel remains active, driven by $\mathrm{Re}(\overline{\eta})$. $\square$
 
 **Remark 13.4.2 (Comparison to classical exploration).** Classical methods — $\epsilon$-greedy, entropy regularization, count-based bonuses — require an explicit annealing schedule. The exploration parameter must be decreased over time, and the schedule is a design choice. The complex framework has no such parameter; the transition is a consequence of the axiom and the system's dynamics.
 
@@ -71,9 +78,9 @@ While the axiom is not derivable in general, it can be derived under additional 
 
 *Proof sketch.* The submartingale $\phi(B_t) = -H(\Theta \mid B_t)$ is bounded above by $0$ and non-decreasing in expectation. By the martingale convergence theorem, it converges almost surely to a limit $\phi_\infty \le 0$. If the limit is $0$ — which requires the system to become certain of $\Theta$ — then $H(\Theta \mid B_t) \to 0$, and $Q_I^* \to 0$. Whether the limit is $0$ depends on whether the system can become certain; in a finite latent space with informative observations, it can. $\square$
 
-**Derivation 2: From contraction on a phase cone.** If $T$ is a contraction on a phase cone $C_\theta$ (Proposition 8.6.2), and if the fixed point lies in $C_\theta$, then the imaginary component of the fixed point is bounded by $\sin\theta \cdot |Q^*|$, and if the fixed point is the limit of iterates, the imaginary component converges to a value bounded by $\sin\theta \cdot M$ for some $M$. If $\theta$ can be made arbitrarily small (by making the cone arbitrarily tight), then $Q_I^* \to 0$.
+**Derivation 2: From contraction on a phase cone.** If $T$ is a contraction on a phase cone $C_\theta$ (Proposition 8.6.2), and if the fixed point lies in $C_\theta$, then the imaginary component of the fixed point is bounded by $\sin\theta \cdot |Q^\*|$, and if the fixed point is the limit of iterates, the imaginary component converges to a value bounded by $\sin\theta \cdot M$ for some $M$. If $\theta$ can be made arbitrarily small (by making the cone arbitrarily tight), then $Q_I^\* \to 0$.
 
-*Proof sketch.* The contraction on $C_\theta$ gives $\|Q_n - Q^*\|_\infty \le \lambda^n \|Q_0 - Q^*\|_\infty$. If $Q^* \in C_\theta$, then $|Q_I^*| \le \tan\theta \cdot Q_R^*$, which can be made small by making $\theta$ small. $\square$
+*Proof sketch.* The contraction on $C_\theta$ gives $\mid Q_n - Q^\*\mid_\infty \le \lambda^n \mid Q_0 - Q^\*\mid_\infty$. If $Q^\* \in C_\theta$, then $|Q_I^\*| \le \tan\theta \cdot Q_R^\*$, which can be made small by making $\theta$ small. $\square$
 
 **Derivation 3: From finite state space and irreducibility.** If the cMDP has finite state space and the Markov chain under the optimal policy is irreducible and aperiodic, then the potential $\phi$ converges to a stationary distribution. If the stationary distribution concentrates on states with $\phi = 0$ (i.e. states of zero uncertainty), then $Q_I^* \to 0$.
 
@@ -81,7 +88,7 @@ While the axiom is not derivable in general, it can be derived under additional 
 
 **Derivation 4: From vanishing utility at the fixed point.** If the fixed point is in the first quadrant (Corollary 8.5.3) and the utility $z$ vanishes at the fixed point, then the imaginary component of the fixed point is zero.
 
-*Proof sketch.* At a fixed point with $z \equiv 0$, the Bellman equation becomes $Q^*(b, a) = \lambda \mathbb{E}[Q^*(b', \pi_{Q^*}(b'))]$. Iterating gives $Q^* \equiv 0$. This is a trivial case (zero cost, zero debt), but it illustrates the principle: if the driving terms vanish, so does the fixed point. $\square$
+*Proof sketch.* At a fixed point with $z \equiv 0$, the Bellman equation becomes $Q^\*(b, a) = \lambda \mathbb{E}[Q^\*(b', \pi_{Q^\*}(b'))]$. Iterating gives $Q^\* \equiv 0$. This is a trivial case (zero cost, zero debt), but it illustrates the principle: if the driving terms vanish, so does the fixed point. $\square$
 
 **Remark 13.5.1 (The partial derivations show the axiom is a limit case).** The four derivations show that the axiom holds under additional assumptions. They do not prove the axiom in general. The axiom remains an axiom; the partial derivations are useful for identifying the specific conditions under which the axiom is a theorem.
 
