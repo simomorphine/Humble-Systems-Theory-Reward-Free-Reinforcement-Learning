@@ -225,8 +225,8 @@ The Lyapunov candidate $\mathcal{L}(b, a) = |Q^\*(b, a)|^2$ is non-negative, bou
 
 **Exercise 12.14 (Open).** Prove or disprove the phase convergence conjecture (12.7.4). If the phase converges under the submartingale condition, prove it. If not, construct a counterexample.
 
-**Exercise 12.15 (Open).** The Lyapunov analysis uses the squared modulus $|Q^*|^2$. Would a different function — e.g., the distance to the fixed point $\|Q - Q^*\|_\infty$ — be a better Lyapunov function? Compare the two.
+**Exercise 12.15 (Open).** The Lyapunov analysis uses the squared modulus $|Q^\*|^2$. Would a different function — e.g., the distance to the fixed point $\mid Q - Q^\*\mid_\infty$ — be a better Lyapunov function? Compare the two.
 
-**Exercise 12.16 (Open).** Under what conditions on the cMDP is the Lyapunov candidate $\mathcal{L} = |Q^*|^2$ a *strict* Lyapunov function? Characterize the cMDPs for which strict decrease holds.
+**Exercise 12.16 (Open).** Under what conditions on the cMDP is the Lyapunov candidate $\mathcal{L} = |Q^\*|^2$ a *strict* Lyapunov function? Characterize the cMDPs for which strict decrease holds.
 
 **Exercise 12.17 (Open).** The phase dynamics are discontinuous at the tie set. Is there a smoothed version of the dynamics for which the phase converges continuously? What would that look like?
