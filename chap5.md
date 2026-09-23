@@ -170,7 +170,7 @@ The hierarchy $E_\vee \subseteq E_{\text{avg}} \subseteq E_\wedge$ reflects the 
 ## 5.6 Local asymmetry and symmetric points
 
 **Definition 5.6.1 (Local asymmetry at a point).** The *local asymmetry* of $d_\gamma$ at $b$ is
-$$\alpha_\gamma(b) = \limsup_{b' \to_{\tau_{\text{avg}}} b} \frac{|d_\gamma(b, b') - d_\gamma(b', b)|}{d_{\text{avg}}(b, b')}.$$
+$$\alpha_\gamma(b) = \liminf_{b' \to_{\tau_{\text{avg}}} b} \frac{|d_\gamma(b, b') - d_\gamma(b', b)|}{d_{\text{avg}}(b, b')}.$$
 
 **Proposition 5.6.2 (Range of local asymmetry).** $0 \le \alpha_\gamma(b) \le 2$ for all $b$.
 
