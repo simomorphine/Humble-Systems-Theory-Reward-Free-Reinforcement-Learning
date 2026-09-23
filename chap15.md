@@ -1,6 +1,6 @@
 # Chapter 15 — Cost Geometry and Reward-Free Reinforcement Learning
 
-*(With exercises)*
+
 
 ## 15.1 The two regimes
 
@@ -37,7 +37,7 @@ There is no reward. The agent does not pursue anything; it reduces tension.
 
 **Second, it makes the cost structure explicit.** The cost $c$ and the potential $\phi$ are the framework's inputs. The agent's behavior is determined by these, not by a reward function that may or may not align with them. This makes the framework's predictions clearer: given $c$ and $\phi$, the optimal policy is determined (up to the resolution of OP1).
 
-**Third, it provides a natural account of intrinsic motivation.** If the potential is chosen as negative entropy ($\phi = -H(\Theta \mid \cdot)$), the imaginary component measures information gain, and the agent's behavior is driven by the desire to reduce its own uncertainty — a form of intrinsic motivation that does not require external reward. This is the framework's bridge to the literature on curiosity-driven learning.
+**Third, it provides a natural account of intrinsic motivation.** If the potential is chosen as negative entropy ( $\phi = -H(\Theta \mid \cdot)$ ), the imaginary component measures information gain, and the agent's behavior is driven by the desire to reduce its own uncertainty — a form of intrinsic motivation that does not require external reward. This is the framework's bridge to the literature on curiosity-driven learning.
 
 ### 15.2.3 The cost and potential functions
 
