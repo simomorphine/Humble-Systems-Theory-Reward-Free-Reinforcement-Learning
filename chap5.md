@@ -1,6 +1,5 @@
 # Chapter 5 — Asymmetry and Bitopological Structure
 
-*(Revised with exercises)*
 
 ## 5.1 Asymmetry of the complex quasi-metric
 
