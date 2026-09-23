@@ -1,6 +1,5 @@
 # Chapter 6 — Equilibrium Structure
 
-*(Revised with exercises)*
 
 ## 6.1 Fixed points revisited
 
