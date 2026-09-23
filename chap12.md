@@ -179,7 +179,7 @@ $$\mathcal{L}_R(b, a) = Q_R^\*(b, a)^2, \qquad \mathcal{L}_I(b, a) = Q_I^\*(b, a
 
 **Proposition 12.8.3 (Exploration signal bounded by $\mathcal{L}_I$).** The exploration signal $\mathcal{E}(b)$ of Chapter 10 is bounded by $4 \sup_a \mathcal{L}_I(b, a)$.
 
-*Proof.* The variance of a random variable bounded by $M$ is at most $M^2/4$. Applying this to $\operatorname{Im} A^\pi(b, A)$, which is bounded by $2 \max_a |Q_I^*(b, a)|$, gives the result. $\square$
+*Proof.* The variance of a random variable bounded by $M$ is at most $M^2/4$. Applying this to $\mathrm{Im} A^\pi(b, A)$, which is bounded by $2 \max_a |Q_I^\*(b, a)|$, gives the result. $\square$
 
 **Corollary 12.8.4 (Automatic exploration-exploitation transition).** As the system approaches equilibrium, $\mathcal{L}_I \to 0$, hence $\mathcal{E} \to 0$. The exploration signal decays automatically, without an external schedule.
 
@@ -187,9 +187,9 @@ $$\mathcal{L}_R(b, a) = Q_R^\*(b, a)^2, \qquad \mathcal{L}_I(b, a) = Q_I^\*(b, a
 
 ## 12.9 Summary
 
-The Lyapunov candidate $\mathcal{L}(b, a) = |Q^*(b, a)|^2$ is non-negative, bounded, and decomposes into a cost component $\mathcal{L}_R$ and an epistemic component $\mathcal{L}_I$.
+The Lyapunov candidate $\mathcal{L}(b, a) = |Q^\*(b, a)|^2$ is non-negative, bounded, and decomposes into a cost component $\mathcal{L}_R$ and an epistemic component $\mathcal{L}_I$.
 
-**The Lyapunov decrease is not automatic.** It depends on the ratio of the utility to the value at successors and on the phase alignment between $z$ and $Q^*$. Sufficient conditions for the decrease are given in Theorem 12.4.1 (small utility, bounded value, acute phase angle) and Corollary 12.5.3 (deterministic transitions with small utility). These conditions are restrictive and may hold only near the fixed point.
+**The Lyapunov decrease is not automatic.** It depends on the ratio of the utility to the value at successors and on the phase alignment between $z$ and $Q^\*$. Sufficient conditions for the decrease are given in Theorem 12.4.1 (small utility, bounded value, acute phase angle) and Corollary 12.5.3 (deterministic transitions with small utility). These conditions are restrictive and may hold only near the fixed point.
 
 **Under the HST Equilibrium Axiom,** the epistemic component $\mathcal{L}_I$ vanishes. This gives a formal account of the exploration-exploitation transition: the exploration signal is the variance of the imaginary advantage, bounded by $\mathcal{L}_I$, which decays automatically as the system approaches equilibrium.
 
