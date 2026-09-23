@@ -66,7 +66,11 @@ $$\mathcal{B}(b, a) - \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^\*}(b'))] = \mathbb
 
 *Proof.* Substitute the decomposition of $\mathcal{B}$ (Proposition 12.2.3) and rearrange. $\square$
 
-**Corollary 12.3.2 (Sufficient condition for decrease).** $\mathcal{B}(b, a) \le \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^\*}(b'))]$ if and only if the right-hand side of Proposition 12.3.1 is non-positive.
+**Corollary 12.3.2 (Sufficient condition for decrease).** 
+
+$$\mathcal{B}(b, a) \le \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^\*}(b'))]$$
+
+if and only if the right-hand side of Proposition 12.3.1 is non-positive.
 
 **Remark 12.3.3 (The condition is not automatic).** The right-hand side of Proposition 12.3.1 involves three terms with opposite signs: $\mathbb{E}[|z|^2] \ge 0$, $2\lambda \mathbb{E}[\mathrm{Re}(z \overline{Q^\*})]$ of either sign, and $(\lambda^2 - 1) \mathbb{E}[\mathcal{L}] \le 0$. The decrease condition requires the negative terms to dominate the positive ones. This is not automatic; it depends on the relative magnitudes of $z$ and $Q^*$.
 
