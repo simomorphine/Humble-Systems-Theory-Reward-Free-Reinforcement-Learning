@@ -4,7 +4,7 @@
 
 # Chapter 7 — The Complex Bellman Equation
 
-*(Revised with exercises)*
+
 
 ## 7.1 The setting
 
