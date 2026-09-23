@@ -162,12 +162,13 @@ This chapter establishes the basic objects of the complex RL framework: the cMDP
 
 **Exercise 7.10.** Compute the convergence rate of the value iteration in Exercise 7.9. How many iterations are needed for $\|Q_n - Q^\pi\|_\infty < 0.01$?
 
-**Exercise 7.11.** Prove that the evaluation operator $T^\pi$ is Lipschitz in $\lambda$: for any fixed $Q \in \mathcal{Q}$ and any $\lambda_1, \lambda_2 \in [0, 1)$,
+**Exercise 7.11.** Prove that the evaluation operator $T^\pi$ is Lipschitz in $\lambda$ : for any fixed $Q \in \mathcal{Q}$ and any $\lambda_1, \lambda_2 \in [0, 1)$,
+
 $$\|T^\pi_{\lambda_1} Q - T^\pi_{\lambda_2} Q\|_\infty \le |\lambda_1 - \lambda_2| \cdot \|Q\|_\infty.$$
 
 **Exercise 7.12.** Show that the component Bellman equations for $Q_R^\pi$ and $Q_I^\pi$ are independent: the solution for $Q_R^\pi$ does not depend on the debt $d$, and the solution for $Q_I^\pi$ does not depend on the cost $c$.
 
-**Exercise 7.13.** Verify that the modulus $\|Q^\pi\|_\infty$ is bounded by $Z_{\max}/(1-\lambda)$ and that this bound is tight. Construct a cMDP where equality holds.
+**Exercise 7.13.** Verify that the modulus $\mid Q^\pi\mid_\infty$ is bounded by $Z_{\max}/(1-\lambda)$ and that this bound is tight. Construct a cMDP where equality holds.
 
 **Exercise 7.14 (Discussion).** The evaluation operator is linear. Does this mean the evaluation problem is "trivial"? Discuss what "easy" and "hard" mean in the context of value iteration.
 
