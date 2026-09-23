@@ -124,17 +124,17 @@ The Lyapunov candidate $\mathcal{L}(b, a) = |Q^*(b, a)|^2$ has properties that d
 
 *Proof.* The squared modulus is non-negative. $\square$
 
-**Proposition 11.6.2 (Decomposition).** $\mathcal{L}(b, a) = Q_R^*(b, a)^2 + Q_I^*(b, a)^2$.
+**Proposition 11.6.2 (Decomposition).** $\mathcal{L}(b, a) = Q_R^\*(b, a)^2 + Q_I^\*(b, a)^2$.
 
-*Proof.* $|z|^2 = (\operatorname{Re} z)^2 + (\operatorname{Im} z)^2$. $\square$
+*Proof.* $|z|^2 = (\mathrm{Re} z)^2 + (\mathrm{Im} z)^2$. $\square$
 
 **Proposition 11.6.3 (Upper bound).** $\mathcal{L}(b, a) \le \left(Z_{\max}/(1-\lambda)\right)^2$.
 
-*Proof.* $|Q^*(b, a)| \le Z_{\max}/(1-\lambda)$ by Corollary 7.2.5. $\square$
+*Proof.* $|Q^\*(b, a)| \le Z_{\max}/(1-\lambda)$ by Corollary 7.2.5. $\square$
 
-**Proposition 11.6.4 (Epistemic component).** Under the submartingale condition, $\mathcal{L}_I(b, a) = Q_I^*(b, a)^2 \ge 0$.
+**Proposition 11.6.4 (Epistemic component).** Under the submartingale condition, $\mathcal{L}_I(b, a) = Q_I^\*(b, a)^2 \ge 0$.
 
-*Proof.* $Q_I^* \ge 0$ by Proposition 8.5.1. $\square$
+*Proof.* $Q_I^\* \ge 0$ by Proposition 8.5.1. $\square$
 
 **Remark 11.6.5 (The Lyapunov candidate is not automatically a Lyapunov function).** The properties above establish that $\mathcal{L}$ is non-negative, bounded, and decomposes into cost and epistemic components. Whether it *decreases* along trajectories is a separate question, addressed in Chapter 12.
 
