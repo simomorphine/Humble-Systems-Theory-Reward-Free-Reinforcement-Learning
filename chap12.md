@@ -1,102 +1,124 @@
 # Chapter 12 — Lyapunov Structure
 
-*(Revised with exercises)*
+
 
 ## 12.1 The Lyapunov candidate
 
-Let $Q^* \in \mathcal{Q}$ be a fixed point of the Bellman optimality operator $T$, if one exists (Chapter 11). Define
-$$\mathcal{L}(b, a) = |Q^*(b, a)|^2 = Q_R^*(b, a)^2 + Q_I^*(b, a)^2.$$
+Let $Q^\* \in \mathcal{Q}$ be a fixed point of the Bellman optimality operator $T$, if one exists (Chapter 11). Define
 
-This is the *candidate Lyapunov function*. It is non-negative, bounded, and decomposes into a cost component $\mathcal{L}_R = Q_R^{*2}$ and an epistemic component $\mathcal{L}_I = Q_I^{*2}$.
+$$\mathcal{L}(b, a) = |Q^\*(b, a)|^2 = Q_R^\*(b, a)^2 + Q_I^\*(b, a)^2.$$
+
+This is the *candidate Lyapunov function*. It is non-negative, bounded, and decomposes into a cost component $\mathcal{L}_R = Q_R^{\*2}$ and an epistemic component $\mathcal{L}_I = Q_I^{\*2}$.
 
 **Definition 12.1.1 (Lyapunov function).** A function $\mathcal{L} : \mathcal{B} \times \mathcal{A} \to \mathbb{R}_{\ge 0}$ is a *Lyapunov function* for the system if, along the system's trajectories,
+
 $$\mathcal{L}(B_{t+1}, A_{t+1}) \le \mathcal{L}(B_t, A_t)$$
+
 with equality only at the fixed point. It is a *strict Lyapunov function* if the inequality is strict whenever $(B_t, A_t)$ is not the fixed point.
 
 **Problem 12.1.2.** Is $\mathcal{L}$ a Lyapunov function? A strict Lyapunov function?
 
 ## 12.2 The Bellman equation for the modulus
 
-The Bellman equation for $Q^*$ is
-$$Q^*(b, a) = \mathbb{E}_{b'}\left[z(b, a, b') + \lambda \, Q^*(b', \pi_{Q^*}(b'))\right].$$
+The Bellman equation for $Q^\*$ is
+
+$$Q^\*(b, a) = \mathbb{E}_{b'}\left[z(b, a, b') + \lambda \, Q^\*(b', \pi_{Q^\*}(b'))\right].$$
 
 Taking the squared modulus of both sides and expanding:
-$$|Q^*(b, a)|^2 = \left|\mathbb{E}_{b'}[z(b, a, b') + \lambda Q^*(b', \pi_{Q^*}(b'))]\right|^2.$$
 
-By the modulus-of-expectation inequality (Proposition 2.3.2), $|\mathbb{E}[W]|^2 \le \mathbb{E}[|W|^2]$ for any $\mathbb{C}$-valued random variable $W$. Applying this with $W = z(b, a, b') + \lambda Q^*(b', \pi_{Q^*}(b'))$:
-$$|Q^*(b, a)|^2 \le \mathbb{E}_{b'}\left[\left|z(b, a, b') + \lambda Q^*(b', \pi_{Q^*}(b'))\right|^2\right].$$
+$$|Q^\*(b, a)|^2 = \left|\mathbb{E}_{b'}[z(b, a, b') + \lambda Q^\*(b', \pi_{Q^\*}(b'))]\right|^2.$$
+
+By the modulus-of-expectation inequality (Proposition 2.3.2), $|\mathbb{E}[W]|^2 \le \mathbb{E}[|W|^2]$ for any $\mathbb{C}$-valued random variable $W$. Applying this with $W = z(b, a, b') + \lambda Q^\*(b', \pi_{Q^\*}(b'))$:
+
+$$|Q^\*(b, a)|^2 \le \mathbb{E}_{b'}\left[\left|z(b, a, b') + \lambda Q^\*(b', \pi_{Q^\*}(b'))\right|^2\right].$$
 
 The right-hand side is the *expected backup*.
 
 **Definition 12.2.1 (Expected backup).** Define
-$$\mathcal{B}(b, a) = \mathbb{E}_{b'}\left[\left|z(b, a, b') + \lambda Q^*(b', \pi_{Q^*}(b'))\right|^2\right].$$
+
+$$\mathcal{B}(b, a) = \mathbb{E}_{b'}\left[\left|z(b, a, b') + \lambda Q^\*(b', \pi_{Q^\*}(b'))\right|^2\right].$$
 
 **Proposition 12.2.2 (Jensen bound).** $\mathcal{L}(b, a) \le \mathcal{B}(b, a)$ for all $(b, a)$.
 
-*Proof.* Modulus of expectation applied to $W = z + \lambda Q^*$. $\square$
+*Proof.* Modulus of expectation applied to $W = z + \lambda Q^\*$. $\square$
 
 **Proposition 12.2.3 (Decomposition of the expected backup).**
-$$\mathcal{B}(b, a) = \mathbb{E}_{b'}[|z|^2] + 2\lambda \, \mathbb{E}_{b'}\left[\operatorname{Re}\left(z \, \overline{Q^*(b', \pi_{Q^*}(b'))}\right)\right] + \lambda^2 \, \mathbb{E}_{b'}\left[|Q^*(b', \pi_{Q^*}(b'))|^2\right].$$
 
-*Proof.* Expand $|z + \lambda Q|^2 = |z|^2 + 2\lambda \operatorname{Re}(z \overline{Q}) + \lambda^2 |Q|^2$ and take expectations. $\square$
+$$\mathcal{B}(b, a) = \mathbb{E}_{b'}[|z|^2] + 2\lambda \, \mathbb{E}_{b'}\left[\mathrm{Re}\left(z \, \overline{Q^\*(b', \pi_{Q^\*}(b'))}\right)\right] + \lambda^2 \, \mathbb{E}_{b'}\left[|Q^\*(b', \pi_{Q^\*}(b'))|^2\right].$$
+
+*Proof.* Expand $|z + \lambda Q|^2 = |z|^2 + 2\lambda \mathrm{Re}(z \overline{Q}) + \lambda^2 |Q|^2$ and take expectations. $\square$
 
 **Remark 12.2.4 (Equality condition).** Jensen's inequality is an equality if and only if $W$ has constant argument almost surely. In that case, the expected backup equals the Lyapunov candidate. Otherwise, the expected backup is strictly larger.
 
 ## 12.3 The Lyapunov inequality
 
 The Bellman fixed-point equation gives
+
 $$\mathcal{L}(b, a) \le \mathcal{B}(b, a).$$
 
 We want to compare $\mathcal{B}(b, a)$ to the expected value of $\mathcal{L}$ at the next step:
-$$\mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^*}(b'))] = \mathbb{E}_{b'}[|Q^*(b', \pi_{Q^*}(b'))|^2].$$
+
+$$\mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^\*}(b'))] = \mathbb{E}_{b'}[|Q^\*(b', \pi_{Q^\*}(b'))|^2].$$
 
 **Proposition 12.3.1 (Lyapunov inequality).**
-$$\mathcal{B}(b, a) - \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^*}(b'))] = \mathbb{E}_{b'}\left[|z|^2\right] + 2\lambda \, \mathbb{E}_{b'}\left[\operatorname{Re}\left(z \, \overline{Q^*}\right)\right] + (\lambda^2 - 1) \, \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^*}(b'))].$$
+
+$$\mathcal{B}(b, a) - \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^\*}(b'))] = \mathbb{E}_{b'}\left[|z|^2\right] + 2\lambda \, \mathbb{E}_{b'}\left[\mathrm{Re}\left(z \, \overline{Q^\*}\right)\right] + (\lambda^2 - 1) \, \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^\*}(b'))].$$
 
 *Proof.* Substitute the decomposition of $\mathcal{B}$ (Proposition 12.2.3) and rearrange. $\square$
 
-**Corollary 12.3.2 (Sufficient condition for decrease).** $\mathcal{B}(b, a) \le \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^*}(b'))]$ if and only if the right-hand side of Proposition 12.3.1 is non-positive.
+**Corollary 12.3.2 (Sufficient condition for decrease).** $\mathcal{B}(b, a) \le \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^\*}(b'))]$ if and only if the right-hand side of Proposition 12.3.1 is non-positive.
 
-**Remark 12.3.3 (The condition is not automatic).** The right-hand side of Proposition 12.3.1 involves three terms with opposite signs: $\mathbb{E}[|z|^2] \ge 0$, $2\lambda \mathbb{E}[\operatorname{Re}(z \overline{Q^*})]$ of either sign, and $(\lambda^2 - 1) \mathbb{E}[\mathcal{L}] \le 0$. The decrease condition requires the negative terms to dominate the positive ones. This is not automatic; it depends on the relative magnitudes of $z$ and $Q^*$.
+**Remark 12.3.3 (The condition is not automatic).** The right-hand side of Proposition 12.3.1 involves three terms with opposite signs: $\mathbb{E}[|z|^2] \ge 0$, $2\lambda \mathbb{E}[\mathrm{Re}(z \overline{Q^\*})]$ of either sign, and $(\lambda^2 - 1) \mathbb{E}[\mathcal{L}] \le 0$. The decrease condition requires the negative terms to dominate the positive ones. This is not automatic; it depends on the relative magnitudes of $z$ and $Q^*$.
 
 ## 12.4 Sufficient conditions for Lyapunov decrease
 
 **Theorem 12.4.1 (Lyapunov decrease under small utility and bounded value).** Suppose there exist constants $\epsilon > 0$ and $M > 0$ such that:
 
 - (i) $|z(b, a, b')| \le \epsilon$ for all $(b, a, b')$.
-- (ii) $|Q^*(b, a)| \le M$ for all $(b, a)$.
-- (iii) There exists $\theta \in [0, \pi]$ such that the angle between $z(b, a, b')$ and $Q^*(b', \pi_{Q^*}(b'))$ is at most $\theta$ for all $(b, a, b')$ in the support of the transition kernel.
+- (ii) $|Q^\*(b, a)| \le M$ for all $(b, a)$.
+- (iii) There exists $\theta \in [0, \pi]$ such that the angle between $z(b, a, b')$ and $Q^\*(b', \pi_{Q^\*}(b'))$ is at most $\theta$ for all $(b, a, b')$ in the support of the transition kernel.
 
 If
+
 $$\epsilon^2 + 2\lambda \epsilon M \cos\theta + (\lambda^2 - 1) m^2 \le 0,$$
-where $m = \inf_{b, a} |Q^*(b, a)|$ over the reachable region, then
-$$\mathcal{B}(b, a) \le \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^*}(b'))]$$
+
+where $m = \inf_{b, a} |Q^\*(b, a)|$ over the reachable region, then
+
+$$\mathcal{B}(b, a) \le \mathbb{E}_{b'}[\mathcal{L}(b', \pi_{Q^\*}(b'))]$$
+
 and $\mathcal{L}$ is a Lyapunov function.
 
 *Proof.* Bound each term in Proposition 12.3.1:
+
 $$\mathbb{E}[|z|^2] \le \epsilon^2,$$
-$$2\lambda \mathbb{E}[\operatorname{Re}(z \overline{Q^*})] \le 2\lambda \epsilon M \cos\theta,$$
+
+$$2\lambda \mathbb{E}[\mathrm{Re}(z \overline{Q^*})] \le 2\lambda \epsilon M \cos\theta,$$
+
 $$(\lambda^2 - 1) \mathbb{E}[\mathcal{L}] \le (\lambda^2 - 1) m^2.$$
+
 Combining and using the stated condition gives the result. $\square$
 
-**Remark 12.4.2 (The conditions are restrictive).** Theorem 12.4.1 requires the utility to be small, the fixed point to be bounded away from zero in the reachable region, and the angle between $z$ and $Q^*$ to be acute. These conditions may hold near the fixed point but not in the transient. The theorem gives a *local* Lyapunov decrease, not a global one.
+**Remark 12.4.2 (The conditions are restrictive).** Theorem 12.4.1 requires the utility to be small, the fixed point to be bounded away from zero in the reachable region, and the angle between $z$ and $Q^\*$ to be acute. These conditions may hold near the fixed point but not in the transient. The theorem gives a *local* Lyapunov decrease, not a global one.
 
-**Remark 12.4.3 (The case $\theta = 0$).** If $z$ and $Q^*$ point in the same direction (i.e. $\theta = 0$), the cross-term is positive and the condition becomes $\epsilon^2 + 2\lambda \epsilon M + (\lambda^2 - 1) m^2 \le 0$. This requires $m$ to be large enough relative to $\epsilon$ and $M$, which is a substantial restriction.
+**Remark 12.4.3 (The case $\theta = 0$).** If $z$ and $Q^\*$ point in the same direction (i.e. $\theta = 0$), the cross-term is positive and the condition becomes $\epsilon^2 + 2\lambda \epsilon M + (\lambda^2 - 1) m^2 \le 0$. This requires $m$ to be large enough relative to $\epsilon$ and $M$, which is a substantial restriction.
 
-**Remark 12.4.4 (The case $\theta = \pi$).** If $z$ and $Q^*$ point in opposite directions (i.e. $\theta = \pi$), the cross-term is negative, and the condition becomes $\epsilon^2 - 2\lambda \epsilon M + (\lambda^2 - 1) m^2 \le 0$. This is easier to satisfy. The decrease condition is therefore *easier* when the utility and the value point in opposite directions, which is counter-intuitive but consistent with the framework's structure: when the cost and the value have opposite phases, the modulus decreases along the Bellman update.
+**Remark 12.4.4 (The case $\theta = \pi$).** If $z$ and $Q^\*$ point in opposite directions (i.e. $\theta = \pi$), the cross-term is negative, and the condition becomes $\epsilon^2 - 2\lambda \epsilon M + (\lambda^2 - 1) m^2 \le 0$. This is easier to satisfy. The decrease condition is therefore *easier* when the utility and the value point in opposite directions, which is counter-intuitive but consistent with the framework's structure: when the cost and the value have opposite phases, the modulus decreases along the Bellman update.
 
 ## 12.5 Lyapunov decrease in the deterministic case
 
 When transitions are deterministic, the analysis simplifies.
 
 **Proposition 12.5.1 (Deterministic transitions).** Suppose $p(b' \mid b, a) = \delta(b' - f(b, a))$ for a deterministic function $f$. Then
-$$\mathcal{L}(b, a) = \left|z(b, a, f(b, a)) + \lambda Q^*(f(b, a), \pi_{Q^*}(f(b, a)))\right|^2.$$
+
+$$\mathcal{L}(b, a) = \left|z(b, a, f(b, a)) + \lambda Q^\*(f(b, a), \pi_{Q^\*}(f(b, a)))\right|^2.$$
 
 *Proof.* The expectation over a Dirac measure is evaluation at $f(b, a)$. $\square$
 
-**Proposition 12.5.2 (Decrease under phase alignment).** In the deterministic case, if the argument of $z(b, a, f(b, a))$ is within $\theta$ of the argument of $Q^*(f(b, a), \pi_{Q^*}(f(b, a)))$, then
-$$\mathcal{L}(b, a) \le |z|^2 + 2\lambda |z| |Q^*| \cos\theta + \lambda^2 \mathcal{L}(f(b, a), \pi_{Q^*}(f(b, a))),$$
-where $z = z(b, a, f(b, a))$ and $Q^* = Q^*(f(b, a), \pi_{Q^*}(f(b, a)))$.
+**Proposition 12.5.2 (Decrease under phase alignment).** In the deterministic case, if the argument of $z(b, a, f(b, a))$ is within $\theta$ of the argument of $Q^\*(f(b, a), \pi_{Q^\*}(f(b, a)))$, then
+
+$$\mathcal{L}(b, a) \le |z|^2 + 2\lambda |z| |Q^\*| \cos\theta + \lambda^2 \mathcal{L}(f(b, a), \pi_{Q^\*}(f(b, a))),$$
+
+where $z = z(b, a, f(b, a))$ and $Q^\* = Q^\*(f(b, a), \pi_{Q^\*}(f(b, a)))$.
 
 *Proof.* Expand the square and bound the cross-term using $\cos\theta$. $\square$
 
