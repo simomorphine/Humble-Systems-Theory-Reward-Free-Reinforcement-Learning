@@ -70,7 +70,11 @@ where $G_t = \sum_{k=t}^\infty \lambda^{k-t} z(B_k, A_k, B_{k+1})$ is the comple
 
 $$\nabla_\theta \eta(\theta) = \int G_0(\tau) \, \nabla_\theta \log d\mathbb{P}_\theta(\tau) \, d\mathbb{P}_\theta(\tau).$$
 
-By Lemma 10.3.2, $\nabla_\theta \log d\mathbb{P}_\theta(\tau) = \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(A_t \mid B_t)$ Hence
+By Lemma 10.3.2, 
+
+$$\nabla_\theta \log d\mathbb{P}_\theta(\tau) = \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(A_t \mid B_t)$$ 
+
+Hence
 
 $$\nabla_\theta \eta(\theta) = \mathbb{E}^{\pi_\theta}\left[G_0(\tau) \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(A_t \mid B_t)\right].$$
 
@@ -118,7 +122,11 @@ $$\nabla_\theta |\eta|^2 = 2 \mathrm{Re}\left(\overline{\eta(\theta)} \cdot \mat
 
 $$\mathbb{E}^{\pi_\theta}\left[b(B_t) \cdot \nabla_\theta \log \pi_\theta(A_t \mid B_t)\right] = 0.$$
 
-*Proof.* By Lemma 10.3.3, $\mathbb{E}_{A_t}[\nabla_\theta \log \pi_\theta(A_t \mid B_t) \mid B_t] = 0$. Multiplying by $b(B_t)$ (which is $B_t$-measurable) and taking the full expectation gives the result. $\square$
+*Proof.* By Lemma 10.3.3, 
+
+$$\mathbb{E}_{A_t}[\nabla_\theta \log \pi_\theta(A_t \mid B_t) \mid B_t] = 0$$ 
+
+Multiplying by $b(B_t)$ (which is $B_t$-measurable) and taking the full expectation gives the result. $\square$
 
 **Corollary 10.6.2 (Advantage form).** The gradient $\nabla_\theta \eta(\theta)$ is unchanged if $G_t$ is replaced by the complex advantage
 
@@ -160,7 +168,7 @@ $$\mathcal{E}(b) = \mathrm{Var}_{A \sim \pi_\theta(\cdot \mid b)}\left[\mathrm{I
 
 **Proposition 10.8.3 (Bounded exploration signal).** $\mathcal{E}(b) \le \left(Z_{\max}/(1-\lambda)\right)^2$ for all $b$.
 
-*Proof.* $\operatorname{Im} A^{\pi_\theta}(b, a) \in [-Z_{\max}/(1-\lambda), Z_{\max}/(1-\lambda)]$. The variance of a random variable bounded by $M$ is at most $M^2$. $\square$
+*Proof.* $\mathrm{Im} A^{\pi_\theta}(b, a) \in [-Z_{\max}/(1-\lambda), Z_{\max}/(1-\lambda)]$. The variance of a random variable bounded by $M$ is at most $M^2$. $\square$
 
 **Proposition 10.8.4 (Exploration signal decays at equilibrium).** If the system converges to equilibrium in the sense that $\mathrm{Im} Q_t^\*(b, a) \to 0$ for all $(b, a)$, then $\mathcal{E}(b) \to 0$ for all $b$.
 
@@ -225,7 +233,7 @@ end for
 
 **The complex policy gradient theorem (Theorem 10.4.1):** the gradient of the complex expected return is a REINFORCE-style identity with complex returns. The proof is measure-theoretic and does not require complex differentiation.
 
-**The gradient of the squared modulus (Theorem 10.5.1):** $\nabla_\theta |\eta|^2 = 2 \operatorname{Re}(\overline{\eta} \cdot \nabla_\theta \eta)$. The result is a real vector, appropriate for descent on real parameters.
+**The gradient of the squared modulus (Theorem 10.5.1):** $\nabla_\theta |\eta|^2 = 2 \mathrm{Re}(\overline{\eta} \cdot \nabla_\theta \eta)$. The result is a real vector, appropriate for descent on real parameters.
 
 **The complex advantage (Corollary 10.6.3):** the gradient can be written in advantage form. The advantage decomposes into a real part (excess cost) and an imaginary part (excess debt). The imaginary part's variance is the exploration signal.
 
