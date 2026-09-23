@@ -102,9 +102,13 @@ The function $\max(0, \cdot)$ is the *hinge* or *ReLU* clipping. It is not diffe
 **Theorem 15.3.1 (Evaluation contraction for Regime B, sketch).** Let $z(b, a, b') = \max(0, c(b, a, b') - r(b, a, b')) + i\,d(b, a, b')$. Define the evaluation operator $T^\pi$ as in Chapter 7. Then $T^\pi$ is a $\lambda$-contraction on $(\mathcal{Q}, \|\cdot\|_\infty)$, with contraction modulus $\lambda$.
 
 *Sketch.* The imaginary part of $T^\pi$ is unchanged from Regime A, so the imaginary component contracts as before. For the real part, the hinge is 1-Lipschitz:
+
 $$|\max(0, c_1 - r) - \max(0, c_2 - r)| \le |c_1 - c_2|.$$
+
 So the real component satisfies
+
 $$|(T^\pi Q_1)_R(b, a) - (T^\pi Q_2)_R(b, a)| \le \lambda \, \mathbb{E}_{b'}\left[|(Q_1)_R(b', \pi(b')) - (Q_2)_R(b', \pi(b'))|\right] \le \lambda \|Q_1 - Q_2\|_\infty.$$
+
 Combining the real and imaginary bounds gives the contraction. $\square$
 
 **Remark 15.3.2 (Status of the theorem).** The sketch establishes the contraction for the evaluation operator. Whether the *optimality* operator contracts in Regime B is open — it depends on the same phase-cancellation obstruction as in Regime A (OP1), plus the additional complication of the hinge.
