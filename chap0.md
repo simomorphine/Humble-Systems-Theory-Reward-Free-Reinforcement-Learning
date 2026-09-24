@@ -307,3 +307,288 @@ Humble Systems Theory is the overarching framework that unifies the approach dev
 The present chapter has established the foundations of this framework: the failure of scalarisation, the geometric alternative, the uniqueness of $\mathbb{C}$, and the connection to prior work. The remaining chapters develop the theory in full.
 
 ---
+
+### 1.5.2 Comparison with Other Representations
+
+Let us compare the complex numbers with alternative representations for encoding cost and debt.
+
+**1. Vectors $(c,d)$:**
+
+| Aspect | Vector Representation | Complex Representation |
+|--------|----------------------|----------------------|
+| **Addition** | Component-wise | Component-wise |
+| **Multiplication** | No natural multiplication | Natural multiplication |
+| **Distance** | Ad hoc (Euclidean norm) | Modulus (natural) |
+| **Phase** | No phase concept | Phase has meaning |
+| **Algebraic Structure** | Vector space only | Field |
+| **Analytic Functions** | Not applicable | Rich theory |
+
+**Advantages of Vectors:**
+- Simple and intuitive.
+- Component-wise operations are straightforward.
+
+**Disadvantages of Vectors:**
+- No natural multiplication (dot product is not multiplication; cross product is not defined in 2D).
+- Distance is ad hoc—why Euclidean and not Manhattan or some other norm?
+- No phase or angle concept with algebraic meaning.
+- No analytic function theory.
+
+**2. Complex Numbers $c + id$:**
+
+| Aspect | Complex Representation |
+|--------|----------------------|
+| **Addition** | Component-wise |
+| **Multiplication** | $(a+ib)(c+id) = (ac-bd) + i(ad+bc)$ |
+| **Distance** | Modulus $\|z\| = \sqrt{c^2 + d^2}$ (natural) |
+| **Phase** | $\theta = \arg(z)$ (meaningful) |
+| **Algebraic Structure** | Field |
+| **Analytic Functions** | Rich theory (holomorphic functions, conformal maps) |
+
+**Advantages of Complex Numbers:**
+- Natural multiplication that interacts with the geometry.
+- Modulus is the natural Euclidean norm.
+- Phase has a clear interpretation (exploration-exploitation angle).
+- Rich mathematical theory (complex analysis, conformal mappings, contour integration).
+
+**Disadvantages of Complex Numbers:**
+- Requires familiarity with complex analysis.
+- Multiplication may not have an intuitive physical interpretation in all contexts.
+
+**3. Quaternions $q = a + bi + cj + dk$:**
+
+| Aspect | Quaternion Representation |
+|--------|--------------------------|
+| **Dimension** | Four-dimensional |
+| **Multiplication** | Non-commutative |
+| **Distance** | Norm (Euclidean) |
+| **Phase** | Ambiguous (multiple angles) |
+
+**Advantages of Quaternions:**
+- Can represent rotations in 3D.
+- Rich algebraic structure.
+
+**Disadvantages of Quaternions:**
+- Overkill for two burdens.
+- Non-commutativity complicates operations.
+- Phase ambiguity (multiple angles).
+- Not a field (non-commutative division algebra).
+
+**4. Matrices:**
+
+| Aspect | Matrix Representation |
+|--------|----------------------|
+| **Dimension** | Any (including 2x2) |
+| **Multiplication** | Matrix multiplication |
+| **Distance** | Various matrix norms |
+| **Phase** | Not naturally defined |
+
+**Advantages of Matrices:**
+- Very general.
+- Can represent many operations.
+
+**Disadvantages of Matrices:**
+- Too general—loses the specific structure we need.
+- No natural phase interpretation.
+- Many matrix norms to choose from (ad hoc).
+
+**5. Tensors:**
+
+| Aspect | Tensor Representation |
+|--------|----------------------|
+| **Dimension** | Multi-dimensional |
+| **Multiplication** | Various tensor products |
+| **Distance** | Various norms |
+| **Phase** | Not naturally defined |
+
+**Advantages of Tensors:**
+- Can represent high-dimensional structures.
+- Flexible.
+
+**Disadvantages of Tensors:**
+- Too complex for our purposes.
+- No natural metric or phase.
+- Computationally expensive.
+
+**Summary Comparison:**
+
+| Representation | Dimension | Field? | Norm | Phase | Natural |
+|----------------|-----------|--------|------|-------|---------|
+| **Vector** | 2 | No | Ad hoc | No | No |
+| **Complex** | 2 | Yes | Natural | Yes | **Yes** |
+| **Split-Complex** | 2 | No | No | No | No |
+| **Quaternion** | 4 | No (non-commutative) | Natural | Ambiguous | No |
+| **Matrix** | Variable | No | Ad hoc | No | No |
+| **Tensor** | Variable | No | Ad hoc | No | No |
+
+**Conclusion:** The complex numbers are the unique two-dimensional algebra that is a field with a compatible norm and a natural phase interpretation. They are the *only* representation that satisfies all our requirements.
+
+---
+
+### 1.5.3 Why Complex Numbers Are Better Than Vectors
+
+The difference between complex numbers and vectors is not merely semantic—it is structural.
+
+**1. Multiplication:**
+
+Vectors do not have a natural multiplication. The dot product $c_1 c_2 + d_1 d_2$ produces a scalar, not another vector. The cross product is not defined in 2D.
+
+Complex numbers have natural multiplication:
+
+$$
+(c_1 + id_1)(c_2 + id_2) = (c_1 c_2 - d_1 d_2) + i(c_1 d_2 + d_1 c_2).
+$$
+
+This multiplication has geometric meaning: it rotates and scales in the complex plane.
+
+**2. The Norm:**
+
+For vectors, the Euclidean norm $\sqrt{c^2 + d^2}$ is one of many possible norms (Manhattan, supremum, etc.). Why choose Euclidean?
+
+For complex numbers, the modulus $|z| = \sqrt{c^2 + d^2}$ is the *unique* norm that satisfies:
+
+- **Multiplicativity:** $|z_1 z_2| = |z_1||z_2|$.
+- **Triangle Inequality:** $|z_1 + z_2| \leq |z_1| + |z_2|$.
+- **Compatibility:** The norm is compatible with the field structure.
+
+The modulus is not arbitrary—it is the *natural* norm on the complex numbers.
+
+**3. The Phase:**
+
+Vectors can have an angle, but it is defined using trigonometric functions: $\theta = \arctan(d/c)$. This is an external definition.
+
+Complex numbers have an intrinsic phase: $z = |z| e^{i\theta}$. The phase is part of the algebraic structure, not an external addition.
+
+**4. Analytic Functions:**
+
+Vectors do not support a theory of analytic functions. Complex numbers support holomorphic functions, conformal mappings, contour integration, and the rich theory of complex analysis.
+
+**5. Algebraic Closure:**
+
+The complex numbers are algebraically closed—every polynomial has a root in $\mathbb{C}$. Vectors do not have this property.
+
+**The Bottom Line:**
+
+Complex numbers are not just vectors with a special notation. They are a *different kind of structure*—a field with a compatible norm, a natural phase, and a rich analytic theory. The complex plane is not the same as $\mathbb{R}^2$ with a dot product.
+Geometric meaning: Scaling.
+
+**3. Multiplication:**
+
+$$
+(c_1 + id_1)(c_2 + id_2) = (c_1 c_2 - d_1 d_2) + i(c_1 d_2 + d_1 c_2).
+$$
+
+Geometric meaning: Rotation and scaling. If $z_1 = r_1 e^{i\theta_1}$ and $z_2 = r_2 e^{i\theta_2}$, then:
+
+$$
+z_1 z_2 = r_1 r_2 e^{i(\theta_1 + \theta_2)}.
+$$
+
+**4. Conjugation:**
+
+$$
+\overline{c + id} = c - id.
+$$
+
+Geometric meaning: Reflection across the real axis.
+
+**5. Modulus:**
+
+$$
+|z| = \sqrt{c^2 + d^2}.
+$$
+
+Geometric meaning: Distance from the origin.
+
+**6. Phase:**
+
+$$
+\theta = \arg(z).
+$$
+
+Geometric meaning: Angle from the real axis.
+
+**Relevance to Our Framework:**
+
+| Operation | Geometric Meaning | Relevance |
+|-----------|-------------------|-----------|
+| Addition | Vector addition | Combining costs and debts |
+| Multiplication | Rotation and scaling | Combining utilities |
+| Conjugation | Reflection | Debt reversal (paying down) |
+| Modulus | Distance | Objective function |
+| Phase | Angle | Exploration-exploitation balance |
+
+The operations of the complex plane have *direct* interpretations in terms of cost, debt, and their trade-off. This is not true for vectors, which lack natural multiplication and have an ad hoc norm.
+
+---
+
+### 1.5.5 The Phase as a Natural Quantity
+
+The phase $\theta = \arg(z)$ is not an arbitrary construction—it emerges naturally from the complex structure.
+
+**Why Phase Matters:**
+
+1. **Exploration-Exploitation Balance:** $\theta$ directly measures the balance between cost ($c$) and debt ($d$).
+
+2. **Learning Progress:** As the agent learns, $\theta$ decreases from exploration toward exploitation.
+
+3. **State-Dependent:** $\theta$ varies across states, reflecting the different information needs of different states.
+
+4. **Parameter-Free:** $\theta$ is determined by the geometry, not by an external parameter.
+
+**The Phase in Other Representations:**
+
+- **Vectors:** Phase can be defined externally as $\theta = \arctan(d/c)$, but this is an addition to the vector structure, not inherent to it.
+
+- **Matrices:** No natural phase concept.
+
+- **Quaternions:** Multiple phases (Euler angles), leading to ambiguity.
+
+- **Tensors:** No natural phase concept.
+
+**Only Complex Numbers Have a Natural Phase:**
+
+The phase $\theta = \arg(z)$ is part of the algebraic structure of the complex numbers, defined by $z = |z| e^{i\theta}$. It is not an external addition—it emerges from the multiplicative structure.
+
+**This is why phase is meaningful in our framework:**
+
+- It is not an arbitrary parameter.
+- It is determined by the geometry of cost and debt.
+- It changes automatically as the agent learns.
+- It provides a continuous measure of exploration-exploitation balance.
+
+---
+
+### 1.5.6 The Role of the Modulus in a Field
+
+The modulus $|z|$ plays a special role in the complex numbers because it is compatible with the field structure:
+
+1. **Multiplicativity:** $|z_1 z_2| = |z_1||z_2|$.
+
+2. **Triangle Inequality:** $|z_1 + z_2| \leq |z_1| + |z_2|$.
+
+3. **Positive Definiteness:** $|z| \geq 0$, with equality iff $z = 0$.
+
+**Why This Matters:**
+
+- **Convergence:** The contraction properties of the Bellman evaluation operator depend on the compatibility of the norm with the field structure.
+
+- **Stability:** The modulus provides a natural Lyapunov function.
+
+- **Optimality:** The modulus objective is principled because it arises from the field structure.
+
+**In Other Representations:**
+
+- **Vectors:** The Euclidean norm is multiplicative only in the sense that $|z_1||z_2|$ is the product of norms, but there is no multiplication operation to make this meaningful.
+
+- **Quaternions:** The norm is multiplicative, but non-commutativity complicates the algebra.
+
+- **Matrices:** The norm is not generally multiplicative.
+
+**Only Complex Numbers Have:**
+
+1. A field structure (commutative, every element has an inverse).
+2. A compatible norm (multiplicative, positive definite).
+3. A natural phase (from the polar representation).
+4. A rich analytic theory (holomorphic functions).
+
+**This is the mathematical justification for using complex numbers.**
